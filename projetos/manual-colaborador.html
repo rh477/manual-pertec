@@ -1198,7 +1198,9 @@ document.querySelectorAll('.secao').forEach(sec=>{
     const hadFlip=img.classList.contains('flip');
     const isLado=srcLower.includes('para%20o%20lado')||srcLower.includes('para o lado');
     // Mascote aponta pra direita (sem flip) → fica à esquerda, texto à direita
-    const mascoteEsq=isLado;
+    // "para o lado" com flip aponta pra esquerda → mascote fica à direita (padrão)
+    // exceto s3 onde queremos à esquerda mesmo com flip
+    const mascoteEsq=isLado&&(id==='s3'||!hadFlip);
     if(mascoteEsq)sec.classList.add('mascote-esq');
     img.classList.add('sec-mascote');
     secVisual.appendChild(img);
