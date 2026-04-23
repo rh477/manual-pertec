@@ -48,6 +48,9 @@ body{font-family:'Arial',sans-serif;background:#fff;color:var(--txt)}
 
 /* ── SEÇÃO ── */
 .secao{min-height:100vh;background:#fff;display:grid;grid-template-columns:58% 42%;border-top:1px solid #efefef;scroll-margin-top:0;position:relative}
+.secao.mascote-esq{grid-template-columns:42% 58%}
+.secao.mascote-esq .sec-visual{order:1}
+.secao.mascote-esq .sec-content{order:2}
 
 /* ── CONTEÚDO (LEFT) ── */
 .sec-content{padding:80px 60px 80px 88px;display:flex;flex-direction:column;justify-content:center;gap:0}
@@ -1160,6 +1163,12 @@ document.querySelectorAll('.secao').forEach(sec=>{
 
   const img=mascCol.querySelector('img');
   if(img){
+    const srcLower=(img.getAttribute('src')||'').toLowerCase();
+    const hadFlip=img.classList.contains('flip');
+    const isLado=srcLower.includes('para%20o%20lado')||srcLower.includes('para o lado');
+    // Mascote aponta pra direita (sem flip) → fica à esquerda, texto à direita
+    const mascoteEsq=isLado&&!hadFlip;
+    if(mascoteEsq)sec.classList.add('mascote-esq');
     img.classList.add('sec-mascote');
     secVisual.appendChild(img);
   }
