@@ -38,13 +38,14 @@ body{font-family:'Arial',sans-serif;background:#fff;color:var(--txt)}
 .deco-o1{position:absolute;top:-80px;right:10px;width:220px;height:420px;background:var(--laranja);transform:rotate(-20deg);border-radius:6px}
 .capa-logo{height:90px;object-fit:contain;position:relative;z-index:2;display:block;margin-bottom:32px}
 .capa-mid{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0;position:relative;z-index:2;max-width:100%}
-.capa-l1{font-size:80px;font-weight:200;color:#333;line-height:1.05;letter-spacing:-.5px}
-.capa-l2{font-size:80px;font-weight:900;color:var(--txt);line-height:1.05}
+.capa-l1{font-size:80px;font-weight:900;color:var(--laranja);line-height:1.05;letter-spacing:-.5px}
+.capa-l2{font-size:80px;font-weight:900;color:var(--verde);line-height:1.05}
 .capa-sub{font-size:16px;color:#999;margin-top:18px;font-weight:300}
-.capa-per{position:absolute;top:0;left:0;z-index:3}
+.capa-per{position:absolute;bottom:0;left:0;z-index:3}
 .capa-per img{height:380px;object-fit:contain;display:block;filter:drop-shadow(0 16px 32px rgba(0,0,0,.18))}
 .capa-tec{position:absolute;bottom:0;right:40px;z-index:2}
 .capa-tec img{height:380px;object-fit:contain;display:block;filter:drop-shadow(0 16px 32px rgba(0,0,0,.18))}
+.capa-deco-esq{left:0;right:auto;transform:scaleX(-1)}
 
 /* ── SEÇÃO ── */
 .secao{min-height:100vh;background:#fff;display:grid;grid-template-columns:58% 42%;border-top:1px solid #efefef;scroll-margin-top:0;position:relative}
@@ -178,6 +179,11 @@ strong{color:var(--txt);font-weight:700}
 <!-- ========== CAPA ========== -->
 <section class="capa" id="capa">
   <div class="capa-deco" aria-hidden="true">
+    <div class="deco-g1"></div>
+    <div class="deco-g2"></div>
+    <div class="deco-o1"></div>
+  </div>
+  <div class="capa-deco capa-deco-esq" aria-hidden="true">
     <div class="deco-g1"></div>
     <div class="deco-g2"></div>
     <div class="deco-o1"></div>
