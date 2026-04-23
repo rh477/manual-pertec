@@ -1167,7 +1167,7 @@ document.querySelectorAll('.secao').forEach(sec=>{
     const hadFlip=img.classList.contains('flip');
     const isLado=srcLower.includes('para%20o%20lado')||srcLower.includes('para o lado');
     // Mascote aponta pra direita (sem flip) → fica à esquerda, texto à direita
-    const mascoteEsq=isLado&&!hadFlip;
+    const mascoteEsq=isLado;
     if(mascoteEsq)sec.classList.add('mascote-esq');
     img.classList.add('sec-mascote');
     secVisual.appendChild(img);
