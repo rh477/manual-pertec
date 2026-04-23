@@ -10,15 +10,22 @@ html{scroll-behavior:smooth}
 body{font-family:'Arial',sans-serif;background:#fff;color:var(--txt)}
 
 /* ── NAV ── */
-.nav-lat{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:300;display:flex;flex-direction:column;background:rgba(255,255,255,.97);border-radius:14px 0 0 14px;padding:0;box-shadow:-4px 0 20px rgba(0,0,0,.1);min-width:190px;transition:min-width .25s}
-.nav-lat.recolhido{min-width:40px}
-.nav-toggle{all:unset;cursor:pointer;display:flex;align-items:center;justify-content:flex-end;padding:12px 14px 10px;border-bottom:1px solid #f0f0f0;color:#aaa;font-size:14px;width:100%;box-sizing:border-box}
-.nav-lat.recolhido .nav-toggle{justify-content:center;border-bottom:none}
-.nav-arrow{display:inline-block;transition:transform .25s}
-.nav-lat.recolhido .nav-arrow{transform:rotate(180deg)}
-.nav-items{display:flex;flex-direction:column;padding:6px 0}
-.nav-lat.recolhido .nav-items{display:none}
-.nav-a{display:flex;align-items:center;gap:9px;text-decoration:none;padding:6px 16px;font-size:11.5px;color:#666;border-left:3px solid transparent;transition:all .15s;white-space:nowrap}
+/* ── Botão hambúrguer ── */
+.nav-btn{position:fixed;top:18px;right:18px;z-index:500;background:rgba(255,255,255,.95);border:none;cursor:pointer;width:44px;height:44px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;box-shadow:0 2px 14px rgba(0,0,0,.18);transition:background .2s}
+.nav-btn:hover{background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.22)}
+.nav-btn span{display:block;width:22px;height:2px;background:#555;border-radius:2px}
+/* ── Overlay ── */
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:480;opacity:0;pointer-events:none;transition:opacity .25s}
+.nav-overlay.aberto{opacity:1;pointer-events:all}
+/* ── Painel ── */
+.nav-painel{position:fixed;top:0;right:0;height:100vh;width:240px;background:#fff;z-index:490;transform:translateX(100%);transition:transform .3s ease;box-shadow:-4px 0 24px rgba(0,0,0,.15);display:flex;flex-direction:column;overflow-y:auto}
+.nav-painel.aberto{transform:translateX(0)}
+.nav-header{padding:18px 16px 12px;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;justify-content:space-between}
+.nav-titulo{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.6px}
+.nav-fechar{all:unset;cursor:pointer;font-size:18px;color:#bbb;line-height:1;padding:4px}
+.nav-fechar:hover{color:#555}
+.nav-items{display:flex;flex-direction:column;padding:8px 0}
+.nav-a{display:flex;align-items:center;gap:9px;text-decoration:none;padding:7px 18px;font-size:12px;color:#666;border-left:3px solid transparent;transition:all .15s}
 .nav-a:hover{color:var(--laranja);border-left-color:var(--laranja);background:rgba(244,121,32,.04)}
 .nav-a.ativo{color:#111;font-weight:700;border-left-color:var(--verde);background:rgba(141,198,63,.07)}
 .nav-cor{width:9px;height:9px;border-radius:50%;flex-shrink:0}
@@ -116,7 +123,7 @@ strong{color:var(--txt);font-weight:700}
 .sec-title-light,.sec-title-bold{font-size:34px}
 .capa-l1,.capa-l2{font-size:38px}
 .capa-per img,.capa-tec img{height:220px}
-.nav-lat{display:none}
+.nav-btn{top:12px;right:12px;width:38px;height:38px}
 .grid2{grid-template-columns:1fr}
 }
 </style>
@@ -124,8 +131,18 @@ strong{color:var(--txt);font-weight:700}
 <body>
 
 <!-- ========== NAV LATERAL ========== -->
-<nav class="nav-lat" id="navLat">
-  <button class="nav-toggle" id="navToggle" title="Recolher menu"><span class="nav-arrow">◀</span></button>
+<!-- Botão hambúrguer -->
+<button class="nav-btn" id="navBtn" title="Menu" aria-label="Abrir menu">
+  <span></span><span></span><span></span>
+</button>
+<!-- Overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+<!-- Painel lateral -->
+<nav class="nav-painel" id="navPainel">
+  <div class="nav-header">
+    <span class="nav-titulo">Seções</span>
+    <button class="nav-fechar" id="navFechar" title="Fechar">✕</button>
+  </div>
   <div class="nav-items" id="navItems">
   <a href="#capa" class="nav-a ativo"><span class="nav-cor" style="background:#8DC63F"></span>Início</a>
   <a href="#s1" class="nav-a"><span class="nav-cor" style="background:#5d9e1f"></span>01 — Objetivo</a>
@@ -1152,12 +1169,16 @@ document.querySelectorAll('.secao').forEach(sec=>{
   sec.appendChild(secVisual);
 });
 
-// ── Nav toggle ────────────────────────────────────────────────────────────────
-const navToggle=document.getElementById('navToggle');
-const navLat=document.getElementById('navLat');
-navToggle.addEventListener('click',()=>{
-  navLat.classList.toggle('recolhido');
-  navToggle.title=navLat.classList.contains('recolhido')?'Expandir menu':'Recolher menu';
-});
+// ── Nav hambúrguer ────────────────────────────────────────────────────────────
+const navBtn=document.getElementById('navBtn');
+const navOverlay=document.getElementById('navOverlay');
+const navPainel=document.getElementById('navPainel');
+const navFechar=document.getElementById('navFechar');
+function abrirNav(){navPainel.classList.add('aberto');navOverlay.classList.add('aberto');document.body.style.overflow='hidden'}
+function fecharNav(){navPainel.classList.remove('aberto');navOverlay.classList.remove('aberto');document.body.style.overflow=''}
+navBtn.addEventListener('click',abrirNav);
+navOverlay.addEventListener('click',fecharNav);
+navFechar.addEventListener('click',fecharNav);
+document.querySelectorAll('.nav-a').forEach(a=>a.addEventListener('click',fecharNav));
 </script>
 </body></html>
