@@ -122,9 +122,11 @@ strong{color:var(--txt);font-weight:700}
 /* ── S11 SPLIT (saúde + assédio) ── */
 .secao-split{scroll-margin-top:0;border-top:1px solid #efefef;background:#fff}
 .secao-row{display:grid;grid-template-columns:58% 42%}
-.sec-visual-proibido{display:flex;align-items:center;justify-content:center;background:#fff8f8}
-.proibido-sign{width:160px;height:160px;border-radius:50%;border:20px solid #cc2020;position:relative;opacity:.18}
-.proibido-sign::before{content:'';position:absolute;width:20px;height:170%;background:#cc2020;top:-35%;left:50%;transform:translateX(-50%) rotate(-45deg);border-radius:4px}
+.sec-visual-proibido{display:flex;align-items:center;justify-content:center;background:#fff5f5}
+.alerta-wrap{display:flex;flex-direction:column;align-items:center;gap:24px}
+.alerta-icon{font-size:110px;line-height:1;filter:drop-shadow(0 4px 12px rgba(204,32,32,.25))}
+.alerta-sirene{font-size:72px;line-height:1;animation:piscar 1.2s ease-in-out infinite}
+@keyframes piscar{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.92)}}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
@@ -941,7 +943,10 @@ strong{color:var(--txt);font-weight:700}
       </div>
     </div>
     <div class="sec-visual-proibido">
-      <div class="proibido-sign"></div>
+      <div class="alerta-wrap">
+        <div class="alerta-icon">🚫</div>
+        <div class="alerta-sirene">🚨</div>
+      </div>
     </div>
   </div>
 </section>
