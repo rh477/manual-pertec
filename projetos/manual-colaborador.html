@@ -118,6 +118,13 @@ strong{color:var(--txt);font-weight:700}
 .flip{transform:scaleX(-1)}
 .rodape{text-align:center;padding:56px 20px;font-size:13px;color:#bbb;background:#fafafa;border-top:1px solid #efefef}
 
+/* ── S11 SPLIT (saúde + assédio) ── */
+.secao-split{scroll-margin-top:0;border-top:1px solid #efefef;background:#fff}
+.secao-row{display:grid;grid-template-columns:58% 42%}
+.sec-visual-proibido{display:flex;align-items:center;justify-content:center;background:#fff8f8}
+.proibido-sign{width:160px;height:160px;border-radius:50%;border:20px solid #cc2020;position:relative;opacity:.18}
+.proibido-sign::before{content:'';position:absolute;width:20px;height:170%;background:#cc2020;top:-35%;left:50%;transform:translateX(-50%) rotate(-45deg);border-radius:4px}
+
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
 .secao{grid-template-columns:1fr}
@@ -857,64 +864,78 @@ strong{color:var(--txt);font-weight:700}
 </section>
 
 <!-- ========== S11 SAÚDE ========== -->
-<section class="secao" id="s11">
-  <div class="sec-hdr">
-    <div class="sec-masc-col"><div class="masc-wrap"><img src="../marca/Tec%20deitada.png" class="flip" alt=""></div></div>
-    <div class="sec-badge verde">
-      <div class="sec-num">11 — SAÚDE E BEM-ESTAR</div>
-      <div class="sec-title">Cuidando de<br>quem trabalha</div>
+<section class="secao-split" id="s11">
+  <!-- LINHA 1: Saúde — mascote Tec deitada -->
+  <div class="secao-row">
+    <div class="sec-content">
+      <span class="sec-badge-pill" style="background:var(--verde)">Saúde &amp; Bem-Estar</span>
+      <div class="sec-title-wrap">
+        <div class="sec-title-light">Cuidando de</div>
+        <div class="sec-title-bold">quem trabalha</div>
+      </div>
+      <div class="card verde">
+        <div class="card-tit verde"><span class="ico">💚</span> 11.1. Diretrizes Gerais</div>
+        <p>A empresa mantém um ambiente de trabalho baseado em respeito, ética e colaboração. Todos os colaboradores devem atuar de forma a preservar uma convivência profissional saudável.</p>
+      </div>
+      <div class="card verde">
+        <div class="card-tit verde"><span class="ico">🌱</span> 11.2. Saúde e Qualidade de Vida</div>
+        <ul>
+          <li>A empresa incentiva práticas que contribuam para a saúde física e mental dos colaboradores;</li>
+          <li>Os colaboradores devem respeitar seus limites, mantendo equilíbrio entre atividades profissionais e pessoais;</li>
+          <li>É importante a adoção de hábitos que favoreçam o bem-estar e o desempenho no trabalho;</li>
+          <li>Caso ocorram situações que possam impactar a saúde ou o desempenho, o colaborador deverá comunicar o RH ou gestor para as devidas orientações.</li>
+        </ul>
+      </div>
+      <div class="card verde">
+        <div class="card-tit verde"><span class="ico">🏢</span> 11.3. Ambiente de Trabalho e Bem-Estar Organizacional</div>
+        <ul>
+          <li>O ambiente de trabalho deve ser mantido de forma organizada, respeitosa e colaborativa;</li>
+          <li>Os colaboradores devem contribuir para um clima organizacional positivo;</li>
+          <li>Não são permitidas condutas que gerem desconforto, constrangimento ou prejudiquem o bem-estar coletivo;</li>
+          <li>É esperado comportamento profissional nas relações internas e externas.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sec-visual">
+      <div class="deco-lines"><div class="deco-line1"></div><div class="deco-line2"></div><div class="deco-line3"></div></div>
+      <img src="../marca/Tec%20deitada.png" class="sec-mascote flip" alt="Tec">
     </div>
   </div>
-  <div class="sec-body">
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">💚</span> 11.1. Diretrizes Gerais</div>
-      <p>A empresa mantém um ambiente de trabalho baseado em respeito, ética e colaboração. Todos os colaboradores devem atuar de forma a preservar uma convivência profissional saudável.</p>
-    </div>
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">🌱</span> 11.2. Saúde e Qualidade de Vida</div>
-      <ul>
-        <li>A empresa incentiva práticas que contribuam para a saúde física e mental dos colaboradores;</li>
-        <li>Os colaboradores devem respeitar seus limites, mantendo equilíbrio entre atividades profissionais e pessoais;</li>
-        <li>É importante a adoção de hábitos que favoreçam o bem-estar e o desempenho no trabalho;</li>
-        <li>Caso ocorram situações que possam impactar a saúde ou o desempenho, o colaborador deverá comunicar o RH ou gestor para as devidas orientações.</li>
-      </ul>
-    </div>
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">🏢</span> 11.3. Ambiente de Trabalho e Bem-Estar Organizacional</div>
-      <ul>
-        <li>O ambiente de trabalho deve ser mantido de forma organizada, respeitosa e colaborativa;</li>
-        <li>Os colaboradores devem contribuir para um clima organizacional positivo;</li>
-        <li>Não são permitidas condutas que gerem desconforto, constrangimento ou prejudiquem o bem-estar coletivo;</li>
-        <li>É esperado comportamento profissional nas relações internas e externas.</li>
-      </ul>
-    </div>
-    <div class="card proibido">
-      <div class="card-tit vermelho"><span class="ico">🚫</span> 11.4. Política contra Assédio, Discriminação e Conduta Inadequada</div>
-      <p>A empresa não tolera qualquer forma de assédio, discriminação ou conduta inadequada. São consideradas condutas inaceitáveis, incluindo, mas não se limitando a:</p>
-      <ul>
-        <li>Assédio moral;</li>
-        <li>Assédio sexual;</li>
-        <li>Discriminação de qualquer natureza;</li>
-        <li>Agressões verbais, físicas ou comportamentos desrespeitosos.</li>
-      </ul>
-      <p style="margin-top:8px">O descumprimento poderá resultar em medidas disciplinares cabíveis, conforme a gravidade da conduta e legislação vigente.</p>
-    </div>
-    <div class="grid2">
+
+  <!-- LINHA 2: Assédio — símbolo de proibição -->
+  <div class="secao-row" style="border-top:1px solid #efefef">
+    <div class="sec-content">
       <div class="card proibido">
-        <div class="card-tit vermelho"><span class="ico">🚫</span> 11.5. Ambiente Organizacional e Convivência</div>
+        <div class="card-tit vermelho"><span class="ico">🚫</span> 11.4. Política contra Assédio, Discriminação e Conduta Inadequada</div>
+        <p>A empresa não tolera qualquer forma de assédio, discriminação ou conduta inadequada. São consideradas condutas inaceitáveis, incluindo, mas não se limitando a:</p>
         <ul>
-          <li>Não são permitidas condutas que gerem conflitos, constrangimentos ou prejudiquem o clima organizacional;</li>
-          <li>É proibida a disseminação de boatos, fofocas ou informações que possam impactar negativamente o ambiente de trabalho.</li>
+          <li>Assédio moral;</li>
+          <li>Assédio sexual;</li>
+          <li>Discriminação de qualquer natureza;</li>
+          <li>Agressões verbais, físicas ou comportamentos desrespeitosos.</li>
         </ul>
+        <p style="margin-top:8px">O descumprimento poderá resultar em medidas disciplinares cabíveis, conforme a gravidade da conduta e legislação vigente.</p>
       </div>
-      <div class="card proibido">
-        <div class="card-tit vermelho"><span class="ico">🚫</span> 11.6. Uso de Álcool e Substâncias Ilícitas</div>
-        <ul>
-          <li>Não é permitido exercer atividades sob efeito de álcool ou drogas ilícitas;</li>
-          <li>Não é permitido portar, consumir ou comercializar drogas ilícitas nas dependências da empresa ou durante a jornada de trabalho;</li>
-          <li>O descumprimento poderá resultar na aplicação de medidas disciplinares cabíveis, conforme a legislação vigente.</li>
-        </ul>
+      <div class="grid2">
+        <div class="card proibido">
+          <div class="card-tit vermelho"><span class="ico">🚫</span> 11.5. Ambiente Organizacional e Convivência</div>
+          <ul>
+            <li>Não são permitidas condutas que gerem conflitos, constrangimentos ou prejudiquem o clima organizacional;</li>
+            <li>É proibida a disseminação de boatos, fofocas ou informações que possam impactar negativamente o ambiente de trabalho.</li>
+          </ul>
+        </div>
+        <div class="card proibido">
+          <div class="card-tit vermelho"><span class="ico">🚫</span> 11.6. Uso de Álcool e Substâncias Ilícitas</div>
+          <ul>
+            <li>Não é permitido exercer atividades sob efeito de álcool ou drogas ilícitas;</li>
+            <li>Não é permitido portar, consumir ou comercializar drogas ilícitas nas dependências da empresa ou durante a jornada de trabalho;</li>
+            <li>O descumprimento poderá resultar na aplicação de medidas disciplinares cabíveis, conforme a legislação vigente.</li>
+          </ul>
+        </div>
       </div>
+    </div>
+    <div class="sec-visual-proibido">
+      <div class="proibido-sign"></div>
     </div>
   </div>
 </section>
