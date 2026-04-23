@@ -22,7 +22,7 @@ dados/*.json
 clientes/
 propostas/
 conteudo/
-projetos/
+# projetos/ — rastreado para incluir o manual interativo
 briefings/
 trabalho/
 estudos/
