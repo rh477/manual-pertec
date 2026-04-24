@@ -6,6 +6,7 @@
 <style>
 :root{--verde:#8DC63F;--vd:#6aaa28;--laranja:#F47920;--lj:#d4640f;--txt:#222;--sub:#444;--cinza:#f7f7f7}
 *{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
 html{scroll-behavior:smooth}
 body{font-family:'Arial',sans-serif;background:#fff;color:var(--txt)}
 
@@ -128,6 +129,16 @@ strong{color:var(--txt);font-weight:700}
 .alerta-sirene{font-size:120px;line-height:1;animation:piscar 1.2s ease-in-out infinite}
 @keyframes piscar{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.92)}}
 
+/* ── MODO SLIDES ── */
+#slideWrap{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory;scrollbar-width:none;-ms-overflow-style:none;position:relative}
+#slideWrap::-webkit-scrollbar{display:none}
+.capa,.secao,.secao-split{scroll-snap-align:start;height:100vh;overflow:hidden}
+.rodape{display:none}
+.slide-nav{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.95);border-radius:28px;padding:8px 22px;font-size:13px;font-weight:700;color:#666;z-index:400;box-shadow:0 2px 16px rgba(0,0,0,.14);display:flex;align-items:center;gap:14px;user-select:none}
+.slide-btn{cursor:pointer;background:none;border:none;font-size:20px;color:#888;padding:0 2px;line-height:1;transition:color .15s}
+.slide-btn:hover{color:var(--laranja)}
+.slide-btn:disabled{opacity:.25;cursor:default}
+
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
 .secao{grid-template-columns:1fr}
@@ -177,6 +188,8 @@ strong{color:var(--txt);font-weight:700}
   <a href="#s17" class="nav-a"><span class="nav-cor" style="background:#F47920"></span>17 — Termo</a>
   </div>
 </nav>
+
+<div id="slideWrap">
 
 <!-- ========== CAPA ========== -->
 <section class="capa" id="capa">
@@ -1118,24 +1131,61 @@ strong{color:var(--txt);font-weight:700}
   </div>
 </section>
 
+</div><!-- /slideWrap -->
+
 <div class="rodape">
   <img src="../marca/LogoPertec-FundoTransparente%20(1).png" style="height:36px;opacity:.5;margin-bottom:8px;display:block;margin-inline:auto" alt="Pertec Móveis"><br>
   Manual do Colaborador — Pertec Móveis | Uso interno exclusivo
 </div>
 
+<!-- Controle de slides -->
+<div class="slide-nav">
+  <button class="slide-btn" id="slidePrev" title="Slide anterior">&#8592;</button>
+  <span id="slideNum">1 / 18</span>
+  <button class="slide-btn" id="slideNext" title="Próximo slide">&#8594;</button>
+</div>
+
 <script>
+// ── Slide navigation ──────────────────────────────────────────────────────────
+const slideWrap=document.getElementById('slideWrap');
+const slides=Array.from(slideWrap.querySelectorAll('.capa,.secao,.secao-split'));
+const slideNumEl=document.getElementById('slideNum');
+const slidePrevBtn=document.getElementById('slidePrev');
+const slideNextBtn=document.getElementById('slideNext');
+let slideAtual=0;
+
+function irParaSlide(n){
+  if(n<0||n>=slides.length)return;
+  slideAtual=n;
+  slides[n].scrollIntoView({behavior:'smooth',block:'start'});
+  slideNumEl.textContent=(n+1)+' / '+slides.length;
+  slidePrevBtn.disabled=(n===0);
+  slideNextBtn.disabled=(n===slides.length-1);
+  atualizarNav();
+}
+
+slideWrap.addEventListener('scroll',()=>{
+  const idx=Math.round(slideWrap.scrollTop/slideWrap.clientHeight);
+  if(idx!==slideAtual){slideAtual=idx;slideNumEl.textContent=(idx+1)+' / '+slides.length;slidePrevBtn.disabled=(idx===0);slideNextBtn.disabled=(idx===slides.length-1);atualizarNav();}
+},{passive:true});
+
+document.addEventListener('keydown',e=>{
+  if(navPainel.classList.contains('aberto'))return;
+  if(e.key==='PageDown'||e.key==='ArrowRight'||(e.key===' '&&!e.target.matches('input,textarea'))){e.preventDefault();irParaSlide(slideAtual+1);}
+  if(e.key==='PageUp'||e.key==='ArrowLeft'){e.preventDefault();irParaSlide(slideAtual-1);}
+});
+slidePrevBtn.addEventListener('click',()=>irParaSlide(slideAtual-1));
+slideNextBtn.addEventListener('click',()=>irParaSlide(slideAtual+1));
+slidePrevBtn.disabled=true;
+slideNumEl.textContent='1 / '+slides.length;
+
 // ── Nav scroll spy ────────────────────────────────────────────────────────────
 const navAs=document.querySelectorAll('.nav-a[href^="#"]');
-const alvos=[];
-navAs.forEach(a=>{const id=a.getAttribute('href').slice(1);const el=document.getElementById(id);if(el)alvos.push({el,a})});
-function atualizar(){
-  const topo=window.scrollY+120;let atual=null;
-  for(const{el,a}of alvos){if(el.offsetTop<=topo)atual=a}
-  navAs.forEach(a=>a.classList.remove('ativo'));
-  if(atual)atual.classList.add('ativo');
+function atualizarNav(){
+  const id=slides[slideAtual]?slides[slideAtual].id:'';
+  navAs.forEach(a=>a.classList.toggle('ativo',a.getAttribute('href')==='#'+id));
 }
-window.addEventListener('scroll',atualizar,{passive:true});
-atualizar();
+atualizarNav();
 
 // ── Reestruturar layout Pertec: LEFT conteúdo | RIGHT mascote + linhas ────────
 const LABELS={"s1":"Objetivo","s2":"Identidade","s3":"Estrutura","s4":"Aplicação","s5":"Diretrizes","s6":"Conduta","s7":"CLT & Direitos","s8":"Recrutamento","s9":"Onboarding","s10":"Benefícios","s11":"Saúde & Bem-Estar","s12":"Comunicação","s13":"Desligamento","s14":"Canal Ético","s15":"Disciplinar","s16":"Disposições Finais","s17":"Termo"};
@@ -1221,6 +1271,11 @@ function fecharNav(){navPainel.classList.remove('aberto');navOverlay.classList.r
 navBtn.addEventListener('click',abrirNav);
 navOverlay.addEventListener('click',fecharNav);
 navFechar.addEventListener('click',fecharNav);
-document.querySelectorAll('.nav-a').forEach(a=>a.addEventListener('click',fecharNav));
+document.querySelectorAll('.nav-a').forEach(a=>a.addEventListener('click',e=>{
+  const targetId=a.getAttribute('href').slice(1);
+  const target=document.getElementById(targetId);
+  if(target){e.preventDefault();const idx=slides.indexOf(target);if(idx>=0)irParaSlide(idx);}
+  fecharNav();
+}));
 </script>
 </body></html>
