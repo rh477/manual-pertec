@@ -32,20 +32,20 @@ body{font-family:'Arial',sans-serif;background:#fff;color:var(--txt)}
 .nav-cor{width:9px;height:9px;border-radius:50%;flex-shrink:0}
 
 /* ── CAPA ── */
-.capa{background:#fff;min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:6vh 0 0}
-.capa-deco{position:absolute;top:0;right:0;width:38%;height:55%;pointer-events:none;overflow:hidden}
-.deco-g1{position:absolute;top:-120px;right:-60px;width:280px;height:580px;background:var(--verde);transform:rotate(-20deg);border-radius:6px}
-.deco-g2{position:absolute;top:60px;right:150px;width:160px;height:380px;background:var(--vd);transform:rotate(-20deg);border-radius:6px;opacity:.6}
-.deco-o1{position:absolute;top:-80px;right:10px;width:220px;height:420px;background:var(--laranja);transform:rotate(-20deg);border-radius:6px}
-.capa-logo{height:110px;object-fit:contain;position:relative;z-index:2;display:block;margin-top:28px}
-.capa-mid{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0;position:relative;z-index:2;max-width:100%}
+.capa{background:#fff;min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0}
+.capa-deco{position:absolute;top:0;right:0;width:26%;height:100%;pointer-events:none;overflow:hidden}
+.deco-g1{position:absolute;top:-15vh;right:-60px;width:220px;height:150vh;background:var(--verde);transform:rotate(-15deg);border-radius:6px}
+.deco-g2{position:absolute;top:-5vh;right:110px;width:130px;height:130vh;background:var(--vd);transform:rotate(-15deg);border-radius:6px;opacity:.6}
+.deco-o1{position:absolute;top:-10vh;right:10px;width:180px;height:140vh;background:var(--laranja);transform:rotate(-15deg);border-radius:6px}
+.capa-logo{height:90px;object-fit:contain;position:absolute;bottom:5vh;left:50%;transform:translateX(-50%);z-index:2;display:block}
+.capa-mid{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0;position:relative;z-index:2;max-width:46%}
 .capa-l1{font-size:80px;font-weight:900;color:var(--laranja);line-height:1.05;letter-spacing:-.5px}
 .capa-l2{font-size:80px;font-weight:900;color:var(--verde);line-height:1.05}
 .capa-sub{font-size:16px;color:#999;margin-top:18px;font-weight:300}
-.capa-per{position:absolute;bottom:0;left:0;z-index:3}
-.capa-per img{height:min(320px,42vh);object-fit:contain;display:block;filter:drop-shadow(0 16px 32px rgba(0,0,0,.18))}
-.capa-tec{position:absolute;bottom:0;right:40px;z-index:2}
-.capa-tec img{height:min(320px,42vh);object-fit:contain;display:block;filter:drop-shadow(0 16px 32px rgba(0,0,0,.18))}
+.capa-per{position:absolute;top:50%;transform:translateY(-50%);left:1%;z-index:3}
+.capa-per img{height:min(340px,46vh);object-fit:contain;display:block;filter:drop-shadow(0 16px 32px rgba(0,0,0,.18))}
+.capa-tec{position:absolute;top:50%;transform:translateY(-50%);right:1%;z-index:3}
+.capa-tec img{height:min(340px,46vh);object-fit:contain;display:block;filter:drop-shadow(0 16px 32px rgba(0,0,0,.18))}
 .capa-deco-esq{left:0;right:auto;transform:scaleX(-1)}
 
 /* ── SEÇÃO ── */
@@ -146,7 +146,8 @@ strong{color:var(--txt);font-weight:700}
 .sec-content{padding:40px 28px}
 .sec-title-light,.sec-title-bold{font-size:34px}
 .capa-l1,.capa-l2{font-size:38px}
-.capa-per img,.capa-tec img{height:220px}
+.capa-mid{max-width:52%}
+.capa-per img,.capa-tec img{height:200px}
 .nav-btn{top:12px;right:12px;width:38px;height:38px}
 .grid2{grid-template-columns:1fr}
 }
@@ -207,8 +208,8 @@ strong{color:var(--txt);font-weight:700}
     <div class="capa-l1">Manual do</div>
     <div class="capa-l2">Colaborador</div>
     <div class="capa-sub">Políticas Internas — Pertec Móveis</div>
-    <img src="../marca/LogoPertec-FundoTransparente%20(1).png" class="capa-logo" alt="Pertec Móveis">
   </div>
+  <img src="../marca/LogoPertec-FundoTransparente%20(1).png" class="capa-logo" alt="Pertec Móveis">
   <div class="capa-per"><img src="../marca/Per%20pulando.png" alt="Per"></div>
   <div class="capa-tec"><img src="../marca/Tec%20pulando.png" alt="Tec"></div>
 </section>
