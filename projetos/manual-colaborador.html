@@ -130,9 +130,9 @@ strong{color:var(--txt);font-weight:700}
 @keyframes piscar{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.92)}}
 
 /* ── MODO SLIDES ── */
-#slideWrap{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory;scrollbar-width:none;-ms-overflow-style:none;position:relative}
+#slideWrap{height:100vh;overflow-y:scroll;scroll-snap-type:y proximity;scrollbar-width:none;-ms-overflow-style:none;position:relative}
 #slideWrap::-webkit-scrollbar{display:none}
-.capa,.secao,.secao-split{scroll-snap-align:start;height:100vh;overflow:hidden}
+.capa,.secao,.secao-split{scroll-snap-align:start;min-height:100vh}
 .rodape{display:none}
 .slide-nav{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.95);border-radius:28px;padding:8px 22px;font-size:13px;font-weight:700;color:#666;z-index:400;box-shadow:0 2px 16px rgba(0,0,0,.14);display:flex;align-items:center;gap:14px;user-select:none}
 .slide-btn{cursor:pointer;background:none;border:none;font-size:20px;color:#888;padding:0 2px;line-height:1;transition:color .15s}
@@ -1157,7 +1157,7 @@ let slideAtual=0;
 function irParaSlide(n){
   if(n<0||n>=slides.length)return;
   slideAtual=n;
-  slides[n].scrollIntoView({behavior:'smooth',block:'start'});
+  slideWrap.scrollTo({top:slides[n].offsetTop,behavior:'smooth'});
   slideNumEl.textContent=(n+1)+' / '+slides.length;
   slidePrevBtn.disabled=(n===0);
   slideNextBtn.disabled=(n===slides.length-1);
@@ -1165,8 +1165,10 @@ function irParaSlide(n){
 }
 
 slideWrap.addEventListener('scroll',()=>{
-  const idx=Math.round(slideWrap.scrollTop/slideWrap.clientHeight);
-  if(idx!==slideAtual){slideAtual=idx;slideNumEl.textContent=(idx+1)+' / '+slides.length;slidePrevBtn.disabled=(idx===0);slideNextBtn.disabled=(idx===slides.length-1);atualizarNav();}
+  const pos=slideWrap.scrollTop;
+  let newIdx=0;
+  for(let i=slides.length-1;i>=0;i--){if(slides[i].offsetTop<=pos+10){newIdx=i;break;}}
+  if(newIdx!==slideAtual){slideAtual=newIdx;slideNumEl.textContent=(newIdx+1)+' / '+slides.length;slidePrevBtn.disabled=(newIdx===0);slideNextBtn.disabled=(newIdx===slides.length-1);atualizarNav();}
 },{passive:true});
 
 document.addEventListener('keydown',e=>{
