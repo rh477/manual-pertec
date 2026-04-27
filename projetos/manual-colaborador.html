@@ -185,7 +185,8 @@ strong{color:var(--txt);font-weight:700}
   <a href="#s4" class="nav-a"><span class="nav-cor" style="background:#d4640f"></span>04 — Aplicação</a>
   <a href="#s5" class="nav-a"><span class="nav-cor" style="background:#6aaa28"></span>05 — Diretrizes</a>
   <a href="#s6" class="nav-a"><span class="nav-cor" style="background:#F47920"></span>06 — Conduta</a>
-  <a href="#s6b" class="nav-a nav-sub">↳ Atendimento</a>
+  <a href="#s6b" class="nav-a nav-sub">↳ Atend. Geral</a>
+  <a href="#s6b2" class="nav-a nav-sub">↳ Atend. por Setor</a>
   <a href="#s6c" class="nav-a nav-sub">↳ Recursos & Imagem</a>
   <a href="#s7" class="nav-a"><span class="nav-cor" style="background:#3070cc"></span>07 — Disp. Legais</a>
   <a href="#s7b" class="nav-a nav-sub">↳ Férias</a>
@@ -413,9 +414,9 @@ strong{color:var(--txt);font-weight:700}
   </div>
 </section>
 
-<!-- ========== S6B CONDUTA (2/3) — ATENDIMENTO ========== -->
+<!-- ========== S6B CONDUTA — ATENDIMENTO GERAL ========== -->
 <section class="secao secao-wide" id="s6b">
-  <span class="sec-badge-pill" style="background:var(--verde)">06 — Conduta no Trabalho (2/3) — Atendimento</span>
+  <span class="sec-badge-pill" style="background:var(--verde)">06 — Conduta no Trabalho — Atendimento Geral</span>
   <div class="sec-body">
     <div class="card verde">
       <div class="card-tit verde"><span class="ico">🛎️</span> 6.3.1. Atendimento Geral (Todos os Setores)</div>
@@ -436,6 +437,13 @@ strong{color:var(--txt);font-weight:700}
         <li>Comunicar ao gestor inconsistências, falhas ou oportunidades de melhoria.</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<!-- ========== S6B2 CONDUTA — ATENDIMENTO POR SETOR ========== -->
+<section class="secao secao-wide" id="s6b2">
+  <span class="sec-badge-pill" style="background:var(--verde)">06 — Conduta no Trabalho — Atendimento por Setor</span>
+  <div class="sec-body">
     <div class="grid2">
       <div class="card laranja">
         <div class="card-tit laranja"><span class="ico">🏪</span> 6.3.2. Atendimento em Loja e Canais (Comercial/Crediário)</div>
@@ -1242,7 +1250,7 @@ function atualizarNav(){
 atualizarNav();
 
 // ── Reestruturar layout Pertec: LEFT conteúdo | RIGHT mascote + linhas ────────
-const LABELS={"s1":"Objetivo","s2":"Identidade","s3":"Estrutura","s4":"Aplicação","s5":"Diretrizes","s6":"Conduta (1/3)","s6b":"Conduta (2/3)","s6c":"Conduta (3/3)","s7":"Disp. Legais","s7b":"Férias","s8":"Recrutamento","s8b":"Estágio & Aprendiz","s9":"Onboarding","s10":"Benefícios (1/2)","s10b":"Benefícios (2/2)","s11":"Saúde & Bem-Estar","s12":"Comunicação","s13":"Desligamento","s14":"Canal Ético","s15":"Disciplinar","s16":"Disposições Finais","s17":"Termo"};
+const LABELS={"s1":"Objetivo","s2":"Identidade","s3":"Estrutura","s4":"Aplicação","s5":"Diretrizes","s6":"Conduta (1/4)","s6b":"Atend. Geral","s6b2":"Atend. por Setor","s6c":"Conduta (4/4)","s7":"Disp. Legais","s7b":"Férias","s8":"Recrutamento","s8b":"Estágio & Aprendiz","s9":"Onboarding","s10":"Benefícios (1/2)","s10b":"Benefícios (2/2)","s11":"Saúde & Bem-Estar","s12":"Comunicação","s13":"Desligamento","s14":"Canal Ético","s15":"Disciplinar","s16":"Disposições Finais","s17":"Termo"};
 document.querySelectorAll('.secao').forEach(sec=>{
   const id=sec.id;
   const hdr=sec.querySelector('.sec-hdr');
