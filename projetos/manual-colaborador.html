@@ -30,6 +30,9 @@ body{font-family:'Arial',sans-serif;background:#fff;color:var(--txt)}
 .nav-a:hover{color:var(--laranja);border-left-color:var(--laranja);background:rgba(244,121,32,.04)}
 .nav-a.ativo{color:#111;font-weight:700;border-left-color:var(--verde);background:rgba(141,198,63,.07)}
 .nav-cor{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.nav-sub{padding:4px 18px 4px 32px;font-size:11px;color:#aaa;border-left:3px solid transparent}
+.nav-sub:hover{color:var(--laranja);border-left-color:var(--laranja);background:rgba(244,121,32,.04)}
+.nav-sub.ativo{color:#666;font-weight:700;border-left-color:var(--verde);background:rgba(141,198,63,.05)}
 
 /* ── CAPA ── */
 .capa{background:#fff;min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0}
@@ -120,6 +123,12 @@ strong{color:var(--txt);font-weight:700}
 .flip{transform:scaleX(-1)}
 .rodape{text-align:center;padding:56px 20px;font-size:13px;color:#bbb;background:#fafafa;border-top:1px solid #efefef}
 
+/* ── SEÇÃO LARGURA TOTAL (sem mascote) ── */
+.secao.secao-wide{display:flex;flex-direction:column;justify-content:flex-start;padding:44px 88px 56px}
+.secao.secao-wide .sec-body{display:flex;flex-direction:column;gap:18px}
+.secao.secao-wide .sec-title-wrap{margin-bottom:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
 /* ── S11 SPLIT (saúde + assédio) ── */
 .secao-split{scroll-margin-top:0;border-top:1px solid #efefef;background:#fff}
 .secao-row{display:grid;grid-template-columns:58% 42%}
@@ -176,10 +185,15 @@ strong{color:var(--txt);font-weight:700}
   <a href="#s4" class="nav-a"><span class="nav-cor" style="background:#d4640f"></span>04 — Aplicação</a>
   <a href="#s5" class="nav-a"><span class="nav-cor" style="background:#6aaa28"></span>05 — Diretrizes</a>
   <a href="#s6" class="nav-a"><span class="nav-cor" style="background:#F47920"></span>06 — Conduta</a>
+  <a href="#s6b" class="nav-a nav-sub">↳ Atendimento</a>
+  <a href="#s6c" class="nav-a nav-sub">↳ Recursos & Imagem</a>
   <a href="#s7" class="nav-a"><span class="nav-cor" style="background:#3070cc"></span>07 — Disp. Legais</a>
+  <a href="#s7b" class="nav-a nav-sub">↳ Férias</a>
   <a href="#s8" class="nav-a"><span class="nav-cor" style="background:#ff9a3c"></span>08 — Recrutamento</a>
+  <a href="#s8b" class="nav-a nav-sub">↳ Estágio & Aprendiz</a>
   <a href="#s9" class="nav-a"><span class="nav-cor" style="background:#8DC63F"></span>09 — Onboarding</a>
   <a href="#s10" class="nav-a"><span class="nav-cor" style="background:#F47920"></span>10 — Benefícios</a>
+  <a href="#s10b" class="nav-a nav-sub">↳ Ensino & Outros</a>
   <a href="#s11" class="nav-a"><span class="nav-cor" style="background:#6aaa28"></span>11 — Saúde</a>
   <a href="#s12" class="nav-a"><span class="nav-cor" style="background:#d4640f"></span>12 — Comunicação</a>
   <a href="#s13" class="nav-a"><span class="nav-cor" style="background:#5d9e1f"></span>13 — Desligamento</a>
@@ -232,26 +246,26 @@ strong{color:var(--txt);font-weight:700}
 </section>
 
 <!-- ========== S2 IDENTIDADE ========== -->
-<section class="secao" id="s2">
-  <div class="sec-hdr">
-    <div class="sec-masc-col"><div class="masc-wrap"><img src="../marca/Per%20apontando%20para%20frente.png" alt=""></div></div>
-    <div class="sec-badge verde">
-      <div class="sec-num">02 — IDENTIDADE ORGANIZACIONAL</div>
-      <div class="sec-title">Quem somos<br>nós?</div>
-    </div>
+<section class="secao secao-wide" id="s2">
+  <span class="sec-badge-pill" style="background:var(--laranja)">02 — Identidade Organizacional</span>
+  <div class="sec-title-wrap">
+    <div class="sec-title-light">Quem somos</div>
+    <div class="sec-title-bold">nós?</div>
   </div>
   <div class="sec-body">
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">💡</span> Identidade Organizacional</div>
-      <p>Reúne os fundamentos que orientam a atuação da empresa e servem como base para o comportamento esperado de todos os colaboradores.</p>
-    </div>
-    <div class="card laranja">
-      <div class="card-tit laranja"><span class="ico">🎯</span> Missão</div>
-      <p>Facilitar o acesso ao crédito para que as pessoas realizem seus projetos de vida.</p>
-    </div>
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">🔭</span> Visão</div>
-      <p>Ter até 2025 a estrutura organizacional necessária para uma expansão de lojas nas principais cidades do meio oeste catarinense (estrutura: processos internos, tecnologia, pessoas, logística, capital financeiro).</p>
+    <div class="grid3">
+      <div class="card verde">
+        <div class="card-tit verde"><span class="ico">💡</span> Identidade Organizacional</div>
+        <p>Reúne os fundamentos que orientam a atuação da empresa e servem como base para o comportamento esperado de todos os colaboradores.</p>
+      </div>
+      <div class="card laranja">
+        <div class="card-tit laranja"><span class="ico">🎯</span> Missão</div>
+        <p>Facilitar o acesso ao crédito para que as pessoas realizem seus projetos de vida.</p>
+      </div>
+      <div class="card verde">
+        <div class="card-tit verde"><span class="ico">🔭</span> Visão</div>
+        <p>Ter até 2025 a estrutura organizacional necessária para uma expansão de lojas nas principais cidades do meio oeste catarinense (estrutura: processos internos, tecnologia, pessoas, logística, capital financeiro).</p>
+      </div>
     </div>
     <div class="card destaque">
       <div class="card-tit verde"><span class="ico">⭐</span> Valores</div>
@@ -309,13 +323,11 @@ strong{color:var(--txt);font-weight:700}
 </section>
 
 <!-- ========== S5 DIRETRIZES ========== -->
-<section class="secao" id="s5">
-  <div class="sec-hdr">
-    <div class="sec-masc-col"><div class="masc-wrap"><img src="../marca/Tec%20bra%C3%A7os%20cruzados.png" alt=""></div></div>
-    <div class="sec-badge laranja">
-      <div class="sec-num">05 — DIRETRIZES GERAIS</div>
-      <div class="sec-title">Regras que<br>nos orientam</div>
-    </div>
+<section class="secao secao-wide" id="s5">
+  <span class="sec-badge-pill" style="background:var(--laranja)">05 — Diretrizes Gerais</span>
+  <div class="sec-title-wrap">
+    <div class="sec-title-light">Regras que</div>
+    <div class="sec-title-bold">nos orientam</div>
   </div>
   <div class="sec-body">
     <div class="grid2">
@@ -333,7 +345,7 @@ strong{color:var(--txt);font-weight:700}
       </div>
       <div class="card laranja">
         <div class="card-tit laranja"><span class="ico">🔄</span> 5.4 Revisão e Atualização do Manual</div>
-        <p>O presente manual será revisado anualmente, visando garantir sua atualização e conformidade com a legislação vigente. Nenhuma política interna poderá contrariar as diretrizes aqui estabelecidas, devendo todas estar alinhadas às leis brasileiras aplicáveis. Em caso de conflito entre este manual e a legislação vigente, prevalecerão as disposições legais. O manual poderá ser atualizado a qualquer momento, sendo responsabilidade do colaborador manter-se informado. Todas as atualizações serão comunicadas aos colaboradores.</p>
+        <p>O presente manual será revisado anualmente, visando garantir sua atualização e conformidade com a legislação vigente. Em caso de conflito entre este manual e a legislação vigente, prevalecerão as disposições legais. O manual poderá ser atualizado a qualquer momento, sendo responsabilidade do colaborador manter-se informado.</p>
       </div>
       <div class="card verde">
         <div class="card-tit verde"><span class="ico">🔔</span> 5.5 Tratamento de Situações e Não Conformidades</div>
@@ -351,69 +363,76 @@ strong{color:var(--txt);font-weight:700}
   </div>
 </section>
 
-<!-- ========== S6 CONDUTA ========== -->
-<section class="secao" id="s6">
-  <div class="sec-hdr">
-    <div class="sec-masc-col"><div class="masc-wrap"><img src="../marca/Per%20bra%C3%A7os%20cruzados.png" class="flip" alt=""></div></div>
-    <div class="sec-badge verde">
-      <div class="sec-num">06 — CONDUTA NO AMBIENTE DE TRABALHO</div>
-      <div class="sec-title">Como nos<br>comportamos?</div>
-    </div>
+<!-- ========== S6 CONDUTA (1/3) ========== -->
+<section class="secao secao-wide" id="s6">
+  <span class="sec-badge-pill" style="background:var(--verde)">06 — Conduta no Trabalho (1/3)</span>
+  <div class="sec-title-wrap">
+    <div class="sec-title-light">Como nos</div>
+    <div class="sec-title-bold">comportamos?</div>
   </div>
   <div class="sec-body">
     <div class="card laranja">
       <div class="card-tit laranja"><span class="ico">💼</span> Postura geral esperada</div>
       <p>Todos os colaboradores devem desempenhar suas atividades com responsabilidade, ética, profissionalismo e respeito, contribuindo para o bom funcionamento da empresa, o relacionamento harmonioso entre as equipes e a excelência no atendimento aos clientes.</p>
-      <p>Espera-se uma postura adequada no ambiente de trabalho, pautada no respeito mútuo, na colaboração e no compromisso com um ambiente organizacional saudável, seguro e produtivo. O cumprimento destas diretrizes é indispensável para assegurar um padrão de conduta alinhado aos valores e objetivos da empresa, devendo ser observado em todas as atividades, tanto na matriz quanto na filial.</p>
+      <p style="margin-top:8px">Espera-se uma postura adequada no ambiente de trabalho, pautada no respeito mútuo, na colaboração e no compromisso com um ambiente organizacional saudável, seguro e produtivo.</p>
     </div>
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">🤝</span> 6.1. Postura Profissional e Relacionamento Interpessoal</div>
-      <p>Os colaboradores devem manter conduta ética, respeitosa e profissional nas relações de trabalho, conforme diretrizes a seguir:</p>
-      <ul>
-        <li>Manter conduta ética, responsável e profissional em todas as atividades;</li>
-        <li>Tratar colegas, clientes, fornecedores e demais públicos com respeito, cordialidade e igualdade;</li>
-        <li>Utilizar linguagem adequada, evitando qualquer forma de comunicação ofensiva, discriminatória ou constrangedora;</li>
-        <li>Agir com gentileza, clareza e respeito nas interações, estando aberto a feedbacks e melhorias contínuas;</li>
-        <li>Colaborar com a equipe, promovendo um ambiente de cooperação e apoio mútuo;</li>
-        <li>Não praticar, incentivar ou se omitir diante de situações de assédio moral ou sexual, discriminação, abuso de poder ou comportamentos agressivos;</li>
-        <li>Não são permitidas condutas que gerem conflitos, disseminem boatos ou prejudiquem o clima organizacional, a ética, a segurança ou o ambiente profissional, estando o colaborador sujeito às medidas disciplinares cabíveis, conforme a gravidade da conduta e as normas internas da empresa.</li>
-      </ul>
+    <div class="grid2">
+      <div class="card verde">
+        <div class="card-tit verde"><span class="ico">🤝</span> 6.1. Postura Profissional e Relacionamento Interpessoal</div>
+        <ul>
+          <li>Manter conduta ética, responsável e profissional em todas as atividades;</li>
+          <li>Tratar colegas, clientes, fornecedores e demais públicos com respeito, cordialidade e igualdade;</li>
+          <li>Utilizar linguagem adequada, evitando qualquer forma de comunicação ofensiva, discriminatória ou constrangedora;</li>
+          <li>Agir com gentileza, clareza e respeito nas interações, estando aberto a feedbacks e melhorias contínuas;</li>
+          <li>Colaborar com a equipe, promovendo um ambiente de cooperação e apoio mútuo;</li>
+          <li>Não praticar, incentivar ou se omitir diante de situações de assédio moral ou sexual, discriminação, abuso de poder ou comportamentos agressivos;</li>
+          <li>Não são permitidas condutas que gerem conflitos, disseminem boatos ou prejudiquem o clima organizacional.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card verde" style="margin-bottom:18px">
+          <div class="card-tit verde"><span class="ico">✅</span> 6.2. Compromisso com as Atividades e Organização</div>
+          <ul>
+            <li>Executar as atividades com responsabilidade, qualidade e dentro dos prazos estabelecidos;</li>
+            <li>Priorizar tarefas essenciais ao funcionamento do negócio;</li>
+            <li>Manter o ambiente de trabalho organizado, limpo e adequado para atendimento;</li>
+            <li>Realizar reposição, organização de produtos e manutenção do espaço conforme padrão;</li>
+            <li>Zelar pela limpeza de áreas comuns (copa, banheiros e demais espaços compartilhados).</li>
+          </ul>
+        </div>
+        <div class="card proibido">
+          <div class="card-tit vermelho"><span class="ico">🚫</span> Proibições — Alimentação e Bebidas</div>
+          <ul>
+            <li>Vedado o consumo de alimentos nas mesas de trabalho (apenas na copa);</li>
+            <li>Bebidas permitidas nas estações, desde que não alcoólicas e em recipiente com tampa;</li>
+            <li>Proibido circular pelas dependências consumindo alimentos ou bebidas.</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">✅</span> 6.2. Compromisso com as Atividades e Organização</div>
-      <p>Todos os colaboradores devem cumprir as atividades com responsabilidade, qualidade e dentro dos prazos estabelecidos, mantendo organização no ambiente e nos processos de trabalho, seguindo os padrões definidos pela empresa e priorizando o uso eficiente do tempo e dos recursos, sendo assim, deve-se:</p>
-      <ul>
-        <li>Executar as atividades com responsabilidade, qualidade e dentro dos prazos estabelecidos;</li>
-        <li>Priorizar tarefas essenciais ao funcionamento do negócio, como organização do ambiente, preparação para atendimento e suporte às operações;</li>
-        <li>Manter o ambiente de trabalho organizado, limpo e adequado para atendimento;</li>
-        <li>Realizar reposição, organização de produtos e manutenção do espaço conforme padrão da empresa;</li>
-        <li>Zelar pela limpeza de áreas comuns, como copa, banheiros e demais espaços compartilhados.</li>
-      </ul>
-    </div>
-    <div class="card proibido">
-      <div class="card-tit vermelho"><span class="ico">🚫</span> Proibições — Alimentação e Bebidas</div>
-      <ul>
-        <li>É vedado o consumo de alimentos nas mesas de trabalho, devendo essa prática ocorrer exclusivamente na copa da empresa, a fim de preservar a higiene, a organização e o ambiente profissional;</li>
-        <li>É permitido o consumo de bebidas nas estações de trabalho, desde que não alcoólicas e acondicionadas em recipientes adequados, preferencialmente com tampa, sendo vedado o uso de latas, garrafas ou outros recipientes que possam comprometer a organização, a segurança e a integridade dos equipamentos;</li>
-        <li>É proibido circular pelas dependências da empresa consumindo alimentos ou bebidas, devendo essa prática ocorrer apenas nos locais apropriados.</li>
-      </ul>
-    </div>
+  </div>
+</section>
+
+<!-- ========== S6B CONDUTA (2/3) — ATENDIMENTO ========== -->
+<section class="secao secao-wide" id="s6b">
+  <span class="sec-badge-pill" style="background:var(--verde)">06 — Conduta no Trabalho (2/3) — Atendimento</span>
+  <div class="sec-body">
     <div class="card verde">
       <div class="card-tit verde"><span class="ico">🛎️</span> 6.3.1. Atendimento Geral (Todos os Setores)</div>
       <ul>
         <li>Garantir atendimento ágil, cordial e alinhado aos valores da empresa;</li>
         <li>Manter comunicação clara, objetiva e padronizada;</li>
-        <li>Demonstrar conhecimento sobre produtos, serviços e processos ou, quando não for de sua responsabilidade, direcionar ao setor responsável, garantindo a resolução da demanda;</li>
-        <li>Cumprir prazos e acordos estabelecidos, mantendo o interessado informado sobre o andamento dos processos;</li>
-        <li>Registrar corretamente todas as interações, pedidos e informações nos sistemas oficiais da empresa;</li>
-        <li>Atuar de forma integrada entre os setores, garantindo fluidez e continuidade no atendimento;</li>
-        <li>Identificar as necessidades dos clientes e demais públicos e oferecer soluções adequadas às diretrizes da empresa;</li>
+        <li>Demonstrar conhecimento sobre produtos, serviços e processos ou direcionar ao setor responsável, garantindo a resolução da demanda;</li>
+        <li>Cumprir prazos e acordos estabelecidos, mantendo o interessado informado sobre o andamento;</li>
+        <li>Registrar corretamente todas as interações nos sistemas oficiais da empresa;</li>
+        <li>Atuar de forma integrada entre os setores, garantindo fluidez e continuidade;</li>
+        <li>Identificar as necessidades dos clientes e oferecer soluções adequadas às diretrizes da empresa;</li>
         <li>Tratar reclamações com empatia, responsabilidade e foco na resolução;</li>
-        <li>Zelar pela imagem da empresa em todas as interações com o cliente e público em geral;</li>
-        <li>Não transferir demandas para outros setores ou colegas sem o devido acompanhamento, mantendo-se responsável até a sua conclusão ou correto direcionamento;</li>
-        <li>Repassar de forma completa e precisa todas as informações ao transferir ou dar continuidade ao atendimento, garantindo que o solicitante não precise repetir dados, necessidades ou ocorrências já relatadas;</li>
+        <li>Zelar pela imagem da empresa em todas as interações;</li>
+        <li>Não transferir demandas sem o devido acompanhamento, mantendo-se responsável até a conclusão;</li>
+        <li>Repassar de forma completa e precisa todas as informações ao dar continuidade ao atendimento;</li>
         <li>Atuar com senso de urgência na resolução de problemas;</li>
-        <li>Levantar todas as necessidades do solicitante e repassar ao setor responsável de forma completa, garantindo que a área envolvida esteja preparada com alternativas para a resolução ou atendimento;</li>
+        <li>Levantar todas as necessidades do solicitante e repassar ao setor responsável de forma completa;</li>
         <li>Comunicar ao gestor inconsistências, falhas ou oportunidades de melhoria.</li>
       </ul>
     </div>
@@ -432,200 +451,207 @@ strong{color:var(--txt);font-weight:700}
       <div class="card laranja">
         <div class="card-tit laranja"><span class="ico">🚚</span> 6.3.3. Atendimento Operacional (Entregas e Montagem)</div>
         <ul>
-          <li>Comparecer ao local devidamente uniformizado, apresentar-se de forma profissional e iniciar o atendimento com abordagem cordial, informando nome, a empresa e o objetivo da visita;</li>
+          <li>Comparecer ao local devidamente uniformizado, apresentar-se profissionalmente e iniciar com abordagem cordial;</li>
           <li>Ser atencioso, respeitoso e cuidadoso no ambiente do cliente;</li>
-          <li>Cumprir com a agenda e comunicar previamente eventuais atrasos;</li>
+          <li>Cumprir a agenda e comunicar previamente eventuais atrasos;</li>
           <li>Zelar pelos produtos, ferramentas e pelo local de execução do serviço;</li>
           <li>Executar montagem/instalação conforme padrão de qualidade da empresa;</li>
-          <li>Buscar a resolução eficaz de demandas, reduzindo retrabalho e garantindo qualidade;</li>
-          <li>Orientar o cliente sobre uso, cuidados e conservação do produto, quando aplicável;</li>
-          <li>Registrar ocorrências e avarias e reportar imediatamente o líder direto para tratativas, mantendo o cliente informado;</li>
-          <li>Garantir a organização e limpeza do local após a execução do serviço;</li>
+          <li>Buscar resolução eficaz de demandas, reduzindo retrabalho e garantindo qualidade;</li>
+          <li>Orientar o cliente sobre uso, cuidados e conservação do produto;</li>
+          <li>Registrar ocorrências e reportar imediatamente ao líder direto, mantendo o cliente informado;</li>
+          <li>Garantir organização e limpeza do local após a execução do serviço;</li>
           <li>Tratar reclamações com atenção, empatia e foco na solução;</li>
           <li>Cumprir os padrões de atendimento definidos no item 6.3.1.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">🖥️</span> 6.4. Uso de Recursos, Equipamentos e Estrutura</div>
-      <ul>
-        <li>Zelar pela conservação e bom uso dos recursos, equipamentos e estrutura da empresa;</li>
-        <li>Utilizar os equipamentos apenas para fins profissionais;</li>
-        <li>Manter a organização e limpeza dos ambientes e postos de trabalho;</li>
-        <li>Evitar desperdícios, utilizando materiais de forma consciente e responsável;</li>
-        <li>Seguir orientações de uso, armazenamento e manutenção de equipamentos;</li>
-        <li>Não realizar manutenções ou ajustes sem autorização ou conhecimento técnico adequado;</li>
-        <li>Garantir a guarda adequada de equipamentos, ferramentas e materiais após o uso;</li>
-        <li>Comunicar necessidades de manutenção preventiva ou corretiva;</li>
-        <li>Responsabilizar-se pelos itens sob sua utilização durante a jornada de trabalho;</li>
-        <li>Em caso de dano decorrente de uso inadequado dos equipamentos e materiais para o cargo, o colaborador poderá ser responsabilizado pela reposição, mediante comprovação de dolo ou culpa, conforme previsto na legislação vigente.</li>
-      </ul>
-    </div>
-    <div class="card atencao">
-      <div class="card-tit laranja"><span class="ico">📱</span> 6.5. Uso de Celular, Internet e Sistemas</div>
-      <ul>
-        <li>Utilizar o celular de forma consciente, sem comprometer as atividades de trabalho;</li>
-        <li>Não acessar, armazenar ou compartilhar conteúdos inadequados ou não relacionados ao trabalho;</li>
-        <li>Utilizar apenas sistemas, plataformas e aplicativos autorizados pela empresa;</li>
-        <li>Manter sigilo de senhas e acessos, não compartilhando com terceiros;</li>
-        <li>Realizar logoff ou bloqueio de sistemas ao se ausentar do posto de trabalho;</li>
-        <li>Zelar pela segurança das informações acessadas nos sistemas corporativos;</li>
-        <li>Não instalar programas, aplicativos ou softwares sem autorização;</li>
-        <li>Comunicar ao gestor qualquer falha, incidente ou uso indevido identificado;</li>
-        <li>Utilizar e-mails, sistemas e ferramentas corporativas com linguagem adequada e profissional.</li>
-      </ul>
-    </div>
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">👔</span> 6.6. Política de Vestimenta e Uso de Uniforme</div>
-      <ul>
-        <li>Todos os colaboradores devem apresentar-se com vestimentas adequadas ao ambiente corporativo, sendo o uso do uniforme obrigatório durante toda a jornada de trabalho;</li>
-        <li>Não é permitido o uso de vestimentas que não estejam alinhadas ao ambiente profissional, incluindo peças excessivamente informais, curtas, transparentes ou calças com rasgos excessivos, bem como acessórios incompatíveis com a atividade, como bonés, chinelos e sandálias que comprometam a segurança e roupas esportivas, quando não autorizados;</li>
-        <li>O uniforme deve estar sempre limpo e em boas condições de uso;</li>
-        <li>É responsabilidade do colaborador zelar pela conservação e uso adequado do uniforme, devendo comunicar o RH quando houver necessidade de substituição em caso de desgaste;</li>
-        <li>Em caso de dano decorrente de uso inadequado do uniforme, o colaborador poderá ser responsabilizado pela reposição, mediante comprovação de dolo ou culpa, conforme previsto na legislação vigente;</li>
-        <li>Em dias de gravações, eventos ou ações institucionais, devem ser seguidas as orientações específicas de vestimenta da empresa, podendo ser adotadas outras opções previamente autorizadas e aprovadas pela Direção;</li>
-        <li>Não é permitido alterar, customizar ou descaracterizar o uniforme;</li>
-        <li>Em caso de desligamento, o uniforme deverá ser devolvido ao setor de Recursos Humanos.</li>
-      </ul>
-    </div>
-    <div class="card laranja">
-      <div class="card-tit laranja"><span class="ico">⏰</span> 6.7. Uso de Tempo e Conduta no Expediente</div>
-      <ul>
-        <li>Cumprir a jornada de trabalho conforme horários estabelecidos pela empresa;</li>
-        <li>Utilizar o tempo de trabalho de forma produtiva e alinhada às atividades profissionais;</li>
-        <li>Evitar o uso excessivo de celular, distrações e interrupções desnecessárias que comprometam o desempenho individual ou da equipe;</li>
-        <li>Não realizar atividades particulares durante o expediente sem autorização prévia;</li>
-        <li>Comunicar previamente saídas, atrasos ou ausências à liderança imediata, incluindo ausências programadas, garantindo a organização das atividades;</li>
-        <li>Organizar as atividades de forma a otimizar o tempo e cumprir prazos;</li>
-        <li>Não se ausentar do posto de trabalho sem comunicação prévia ao responsável pelo setor;</li>
-        <li>Apoiar a equipe no cumprimento das demandas, quando necessário;</li>
-        <li>Atender às solicitações de outros setores dentro dos prazos estabelecidos, garantindo retorno e execução das atividades, mantendo comunicação sobre o andamento, se necessário, de modo a evitar cobranças recorrentes.</li>
-      </ul>
-    </div>
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">💬</span> 6.8. Comunicação e Hierarquia</div>
-      <ul>
-        <li>Manter comunicação respeitosa, clara e profissional com colegas, lideranças e demais públicos;</li>
-        <li>Respeitar a estrutura hierárquica e as orientações da liderança, observados os limites legais e profissionais;</li>
-        <li>Alinhar previamente com a liderança decisões que impactem outros setores ou a operação;</li>
-        <li>Registrar comunicações relevantes de forma adequada através de pautas ou e-mail, garantindo que as informações sejam corretas, completas e atualizadas, bem como o responsável para esclarecimento de dúvidas;</li>
-        <li>Utilizar os canais oficiais da empresa para compartilhar informações com a equipe, como WhatsApp e e-mail, para tratativas relacionadas aos processos internos de trabalho;</li>
-        <li>Manter postura profissional em comunicações escritas e verbais, inclusive em meios digitais;</li>
-        <li>Buscar esclarecimento junto à liderança em caso de dúvidas sobre responsabilidades ou informações;</li>
-        <li>É proibido promover ou se envolver em conflitos, discussões inadequadas ou condutas desrespeitosas em ambientes corporativos ou canais oficiais;</li>
-        <li>Não assumir compromissos, responder em nome da empresa ou representar institucionalmente sem autorização prévia da Diretoria;</li>
-        <li>Reportar ao líder direto, RH ou à Diretoria situações de irregularidade, condutas inadequadas ou descumprimento de normas.</li>
-      </ul>
-    </div>
-    <div class="card atencao">
-      <div class="card-tit laranja"><span class="ico">🔐</span> 6.9. Confidencialidade, Segurança da Informação e LGPD</div>
-      <ul>
-        <li>Preservar o sigilo de informações internas, estratégicas e confidenciais, utilizando-as exclusivamente para fins profissionais e conforme a finalidade autorizada;</li>
-        <li>Não compartilhar informações com pessoas não autorizadas, respeitando os princípios da necessidade e do acesso mínimo;</li>
-        <li>Não divulgar dados, documentos, relatórios ou qualquer conteúdo interno sem autorização prévia;</li>
-        <li>Não compartilhar senhas, acessos ou dispositivos, mantendo a confidencialidade e a segurança dos acessos;</li>
-        <li>Utilizar apenas sistemas, softwares e ferramentas previamente autorizados pela empresa;</li>
-        <li>Não copiar, armazenar ou transferir dados para dispositivos pessoais ou ambientes não autorizados;</li>
-        <li>Não alterar, excluir ou manipular dados de forma indevida ou fora das atribuições da função;</li>
-        <li>Utilizar dados apenas para a finalidade autorizada, evitando uso indevido ou desnecessário;</li>
-        <li>Comunicar de forma imediata ao gestor ou à área responsável a ocorrência ou suspeita de incidente de segurança da informação, como vazamento, perda ou acesso indevido de dados;</li>
-        <li>Assegurar que o tratamento de dados esteja em conformidade com as normas internas e a LGPD.</li>
-      </ul>
-    </div>
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">🏷️</span> 6.10. Imagem, Marca e Conduta Externa</div>
-      <ul>
-        <li>Preservar a imagem e a reputação da empresa em todas as interações externas, mantendo postura profissional;</li>
-        <li>Utilizar o nome, marca e identidade visual da empresa somente mediante autorização prévia da Diretoria e conforme diretrizes institucionais;</li>
-        <li>Não criar perfis, páginas ou conteúdos utilizando o nome ou a marca da empresa sem autorização;</li>
-        <li>Não realizar ações promocionais, divulgações ou comunicações em nome da empresa sem validação da Diretoria;</li>
-        <li>Não utilizar o nome da empresa para fins pessoais ou benefícios próprios;</li>
-        <li>Manter conduta ética e coerente com os valores da empresa em ambientes públicos e digitais;</li>
-        <li>Não representar a empresa em eventos, entrevistas ou comunicações externas sem autorização prévia;</li>
-        <li>Seguir as orientações institucionais quanto ao uso da marca em materiais, apresentações e comunicações.</li>
-      </ul>
-    </div>
-    <div class="grid2">
-      <div class="card proibido">
-        <div class="card-tit vermelho"><span class="ico">🚫</span> 6.11. Conflito de Interesses, Brindes e Relacionamentos — É proibido</div>
-        <ul>
-          <li>Atuar em situações que envolvam conflito de interesses, real ou potencial, sem comunicação prévia;</li>
-          <li>Utilizar o cargo, função ou influência para obter vantagem pessoal ou para terceiros;</li>
-          <li>Favorecer clientes, fornecedores, parceiros ou quaisquer terceiros por interesse pessoal;</li>
-          <li>Receber ou oferecer vantagens indevidas, incluindo valores, benefícios, presentes ou qualquer tipo de favorecimento que possa influenciar decisões;</li>
-          <li>Aceitar brindes, presentes ou cortesias que possam comprometer a imparcialidade, a ética ou gerar conflito de interesses — nesse caso, o colaborador deve comunicar imediatamente a Diretoria para orientação sobre a destinação adequada do item;</li>
-          <li>Omitir conflitos de interesses ou o recebimento de brindes e benefícios;</li>
-          <li>Trabalhar para concorrentes ou exercer atividades que possam comprometer os interesses da empresa, sem autorização prévia da Diretoria;</li>
-          <li>Estabelecer relações comerciais ou pessoais que comprometam a transparência e a independência nas decisões profissionais.</li>
-        </ul>
-      </div>
-      <div class="card verde">
-        <div class="card-tit verde"><span class="ico">✅</span> 6.11. Boas Práticas Obrigatórias</div>
-        <ul>
-          <li>Declarar à liderança qualquer situação de conflito de interesses, real ou potencial;</li>
-          <li>Comunicar o recebimento de brindes, presentes ou cortesias;</li>
-          <li>Recusar benefícios que possam influenciar ou comprometer decisões profissionais e comunicar a liderança imediata sobre o ocorrido;</li>
-          <li>Manter relações com fornecedores, clientes e parceiros baseadas em critérios técnicos, éticos e imparciais;</li>
-          <li>Priorizar os interesses da empresa, atuando com boa-fé, lealdade e transparência;</li>
-          <li>Seguir as diretrizes internas da empresa quanto ao relacionamento com terceiros;</li>
-          <li>Buscar orientação da liderança em caso de dúvida sobre qualquer situação que possa configurar conflito de interesses.</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== S7 DISPOSIÇÕES LEGAIS ========== -->
-<section class="secao" id="s7">
-  <div class="sec-hdr">
-    <div class="sec-masc-col"><div class="masc-wrap"><img src="../marca/Tec%20bra%C3%A7os%20cruzados.png" class="flip" alt=""></div></div>
-    <div class="sec-badge verde">
-      <div class="sec-num">07 — DISPOSIÇÕES LEGAIS</div>
-      <div class="sec-title">Direitos garantidos<br>pela lei</div>
+<!-- ========== S6C CONDUTA (3/3) — RECURSOS, IMAGEM E CONFLITOS ========== -->
+<section class="secao secao-wide" id="s6c">
+  <span class="sec-badge-pill" style="background:var(--verde)">06 — Conduta no Trabalho (3/3) — Recursos, Imagem e Conflitos</span>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card verde">
+        <div class="card-tit verde"><span class="ico">🖥️</span> 6.4. Uso de Recursos e Equipamentos</div>
+        <ul>
+          <li>Zelar pela conservação e bom uso dos recursos, equipamentos e estrutura da empresa;</li>
+          <li>Utilizar os equipamentos apenas para fins profissionais;</li>
+          <li>Manter organização e limpeza dos ambientes e postos de trabalho;</li>
+          <li>Evitar desperdícios, usando materiais de forma consciente e responsável;</li>
+          <li>Seguir orientações de uso, armazenamento e manutenção de equipamentos;</li>
+          <li>Não realizar manutenções ou ajustes sem autorização ou conhecimento técnico;</li>
+          <li>Garantir guarda adequada de equipamentos e ferramentas após o uso;</li>
+          <li>Comunicar necessidades de manutenção preventiva ou corretiva;</li>
+          <li>Em caso de dano por uso inadequado, o colaborador poderá ser responsabilizado pela reposição, conforme legislação vigente.</li>
+        </ul>
+      </div>
+      <div class="card atencao">
+        <div class="card-tit laranja"><span class="ico">📱</span> 6.5. Uso de Celular, Internet e Sistemas</div>
+        <ul>
+          <li>Utilizar o celular de forma consciente, sem comprometer as atividades de trabalho;</li>
+          <li>Não acessar, armazenar ou compartilhar conteúdos inadequados ou não relacionados ao trabalho;</li>
+          <li>Utilizar apenas sistemas, plataformas e aplicativos autorizados pela empresa;</li>
+          <li>Manter sigilo de senhas e acessos, não compartilhando com terceiros;</li>
+          <li>Realizar logoff ou bloqueio de sistemas ao se ausentar do posto de trabalho;</li>
+          <li>Zelar pela segurança das informações acessadas nos sistemas corporativos;</li>
+          <li>Não instalar programas, aplicativos ou softwares sem autorização;</li>
+          <li>Comunicar ao gestor qualquer falha, incidente ou uso indevido identificado;</li>
+          <li>Utilizar e-mails e sistemas corporativos com linguagem adequada e profissional.</li>
+        </ul>
+      </div>
+      <div class="card verde">
+        <div class="card-tit verde"><span class="ico">👔</span> 6.6. Vestimenta e Uso de Uniforme</div>
+        <ul>
+          <li>Uso do uniforme obrigatório durante toda a jornada de trabalho;</li>
+          <li>Não é permitido o uso de vestimentas inadequadas ao ambiente profissional (informais, curtas, transparentes ou com rasgos excessivos);</li>
+          <li>O uniforme deve estar sempre limpo e em boas condições de uso;</li>
+          <li>Comunicar ao RH necessidade de substituição em caso de desgaste;</li>
+          <li>Em caso de dano por uso inadequado, o colaborador poderá ser responsabilizado pela reposição;</li>
+          <li>Em gravações, eventos ou ações institucionais, seguir as orientações específicas autorizadas pela Direção;</li>
+          <li>Não é permitido alterar, customizar ou descaracterizar o uniforme;</li>
+          <li>Em desligamento, o uniforme deverá ser devolvido ao RH.</li>
+        </ul>
+      </div>
+      <div class="card laranja">
+        <div class="card-tit laranja"><span class="ico">⏰</span> 6.7. Uso de Tempo e Conduta no Expediente</div>
+        <ul>
+          <li>Cumprir a jornada de trabalho conforme horários estabelecidos pela empresa;</li>
+          <li>Utilizar o tempo de forma produtiva e alinhada às atividades profissionais;</li>
+          <li>Evitar uso excessivo de celular, distrações e interrupções desnecessárias;</li>
+          <li>Não realizar atividades particulares durante o expediente sem autorização prévia;</li>
+          <li>Comunicar previamente saídas, atrasos ou ausências à liderança imediata;</li>
+          <li>Organizar atividades para otimizar o tempo e cumprir prazos;</li>
+          <li>Não se ausentar do posto de trabalho sem comunicação prévia ao responsável;</li>
+          <li>Apoiar a equipe no cumprimento das demandas, quando necessário;</li>
+          <li>Atender às solicitações de outros setores dentro dos prazos estabelecidos.</li>
+        </ul>
+      </div>
+      <div class="card verde">
+        <div class="card-tit verde"><span class="ico">💬</span> 6.8. Comunicação e Hierarquia</div>
+        <ul>
+          <li>Manter comunicação respeitosa, clara e profissional com colegas, lideranças e demais públicos;</li>
+          <li>Respeitar a estrutura hierárquica e as orientações da liderança;</li>
+          <li>Alinhar previamente com a liderança decisões que impactem outros setores;</li>
+          <li>Registrar comunicações relevantes adequadamente (pautas ou e-mail);</li>
+          <li>Utilizar canais oficiais da empresa (WhatsApp, e-mail) para tratativas internas;</li>
+          <li>Manter postura profissional em comunicações escritas, verbais e digitais;</li>
+          <li>Buscar esclarecimento junto à liderança em caso de dúvidas;</li>
+          <li>É proibido promover conflitos, discussões inadequadas ou condutas desrespeitosas;</li>
+          <li>Não assumir compromissos em nome da empresa sem autorização prévia da Diretoria;</li>
+          <li>Reportar situações de irregularidade ao líder direto, RH ou Diretoria.</li>
+        </ul>
+      </div>
+      <div class="card atencao">
+        <div class="card-tit laranja"><span class="ico">🔐</span> 6.9. Confidencialidade, Segurança e LGPD</div>
+        <ul>
+          <li>Preservar o sigilo de informações internas, estratégicas e confidenciais;</li>
+          <li>Não compartilhar informações com pessoas não autorizadas;</li>
+          <li>Não divulgar dados, documentos ou relatórios sem autorização prévia;</li>
+          <li>Não compartilhar senhas, acessos ou dispositivos;</li>
+          <li>Utilizar apenas sistemas e ferramentas autorizados pela empresa;</li>
+          <li>Não copiar, armazenar ou transferir dados para dispositivos pessoais;</li>
+          <li>Não alterar ou excluir dados fora das atribuições da função;</li>
+          <li>Comunicar imediatamente ao gestor suspeita de incidente de segurança (vazamento, perda ou acesso indevido);</li>
+          <li>Assegurar conformidade com as normas internas e a LGPD.</li>
+        </ul>
+      </div>
+      <div class="card verde">
+        <div class="card-tit verde"><span class="ico">🏷️</span> 6.10. Imagem, Marca e Conduta Externa</div>
+        <ul>
+          <li>Preservar a imagem e reputação da empresa em todas as interações externas;</li>
+          <li>Utilizar nome, marca e identidade visual somente mediante autorização prévia da Diretoria;</li>
+          <li>Não criar perfis, páginas ou conteúdos usando a marca sem autorização;</li>
+          <li>Não realizar divulgações em nome da empresa sem validação da Diretoria;</li>
+          <li>Não utilizar o nome da empresa para fins pessoais ou benefícios próprios;</li>
+          <li>Manter conduta ética e coerente com os valores da empresa em ambientes públicos e digitais;</li>
+          <li>Não representar a empresa em eventos ou comunicações externas sem autorização prévia.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card proibido" style="margin-bottom:18px">
+          <div class="card-tit vermelho"><span class="ico">🚫</span> 6.11. Conflito de Interesses — É proibido</div>
+          <ul>
+            <li>Atuar em conflito de interesses sem comunicação prévia;</li>
+            <li>Utilizar o cargo para obter vantagem pessoal ou para terceiros;</li>
+            <li>Receber ou oferecer vantagens indevidas, brindes ou favorecimentos que influenciem decisões;</li>
+            <li>Omitir conflitos de interesses ou recebimento de brindes e benefícios;</li>
+            <li>Trabalhar para concorrentes sem autorização prévia da Diretoria.</li>
+          </ul>
+        </div>
+        <div class="card verde">
+          <div class="card-tit verde"><span class="ico">✅</span> 6.11. Boas Práticas Obrigatórias</div>
+          <ul>
+            <li>Declarar à liderança qualquer situação de conflito de interesses, real ou potencial;</li>
+            <li>Comunicar o recebimento de brindes, presentes ou cortesias;</li>
+            <li>Recusar benefícios que possam comprometer decisões profissionais;</li>
+            <li>Manter relações com terceiros baseadas em critérios técnicos, éticos e imparciais;</li>
+            <li>Buscar orientação da liderança em caso de dúvida sobre conflito de interesses.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
+</section>
+
+<!-- ========== S7 DISPOSIÇÕES LEGAIS (1/2) — LICENÇAS ========== -->
+<section class="secao secao-wide" id="s7">
+  <span class="sec-badge-pill" style="background:#3070cc">07 — Disposições Legais</span>
+  <div class="sec-title-wrap">
+    <div class="sec-title-light">Direitos garantidos</div>
+    <div class="sec-title-bold">pela lei</div>
+  </div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card legal">
+        <div class="card-tit azul"><span class="ico">⚖️</span> 7.1. Licenças e Ausências Justificadas</div>
+        <p style="margin-bottom:8px">A Pertec concederá, sem prejuízo de salário, as licenças e ausências previstas na CLT, mediante documentação comprobatória:</p>
+        <ul>
+          <li><strong>Art. 392</strong> — Licença-maternidade: 120 dias;</li>
+          <li><strong>Art. 392-A</strong> — Adoção: licença nos termos do art. 392;</li>
+          <li><strong>Art. 396</strong> — Amamentação: 2 intervalos de 30 min até o filho completar 6 meses;</li>
+          <li><strong>Art. 473, I</strong> — Falecimento de cônjuge, ascendente, descendente, irmão ou dependente: 2 dias;</li>
+          <li><strong>Art. 473, II</strong> — Casamento: 3 dias;</li>
+          <li><strong>Art. 473, III</strong> — Nascimento de filho(a) / Licença paternidade: 5 dias;</li>
+          <li><strong>Art. 473, IV</strong> — Doação de sangue: 1 dia a cada 12 meses;</li>
+          <li><strong>Art. 473, V</strong> — Alistamento eleitoral: até 2 dias;</li>
+          <li><strong>Art. 473, VI</strong> — Serviço Militar: período necessário;</li>
+          <li><strong>Art. 473, VII</strong> — Vestibular: dias de prova;</li>
+          <li><strong>Art. 473, VIII</strong> — Comparecimento a juízo: período necessário;</li>
+          <li><strong>Art. 473, X</strong> — Consultas médicas da esposa/companheira na gravidez: até 6 consultas;</li>
+          <li><strong>Art. 473, XI</strong> — Consulta médica de filho até 6 anos: 1 dia/ano;</li>
+          <li><strong>Art. 473, XII</strong> — Exames preventivos de câncer: até 3 dias a cada 12 meses.</li>
+        </ul>
+      </div>
+      <div class="card atencao">
+        <div class="card-tit laranja"><span class="ico">⚠️</span> Comunicação e Documentação Obrigatória</div>
+        <ul>
+          <li><strong>Casamento:</strong> comunicar gestor e RH com antecedência mínima de 30 dias;</li>
+          <li><strong>Nascimento, falecimento ou convocação:</strong> comunicar o gestor tão logo tenha ciência;</li>
+          <li><strong>Em todos os casos:</strong> obrigatória apresentação de documento comprobatório dentro dos prazos;</li>
+          <li>A ausência será justificada mediante entrega da documentação exigida, desde que formalmente regular e compatível com a hipótese legal.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== S7B DISPOSIÇÕES LEGAIS (2/2) — FÉRIAS ========== -->
+<section class="secao secao-wide" id="s7b">
+  <span class="sec-badge-pill" style="background:#3070cc">07 — Disposições Legais — Férias</span>
   <div class="sec-body">
     <div class="card legal">
-      <div class="card-tit azul"><span class="ico">⚖️</span> 7.1. Licenças e Ausências Justificadas</div>
-      <p>A Pertec concederá ao colaborador, sem prejuízo de salário, as licenças e ausências justificadas previstas na Consolidação das Leis do Trabalho (CLT) e demais normas legais aplicáveis, mediante apresentação de documentação comprobatória, nos casos abaixo:</p>
-      <ul>
-        <li><strong>Art. 392</strong> — A empregada gestante tem direito à licença-maternidade de 120 (cento e vinte) dias, sem prejuízo do emprego e do salário (Lei nº 10.421/2002);</li>
-        <li><strong>Art. 392-A</strong> — À empregada que adotar ou obtiver guarda judicial para fins de adoção de criança ou adolescente será concedida licença-maternidade nos termos do art. 392 desta Lei (Lei nº 13.509/2017);</li>
-        <li><strong>Art. 396</strong> — Para amamentar seu filho, inclusive se advindo de adoção, até que este complete 6 (seis) meses de idade, a mulher terá direito, durante a jornada de trabalho, a 2 (dois) descansos especiais de meia hora cada um (Lei nº 13.509/2017);</li>
-        <li><strong>Art. 473, I</strong> — até 2 (dois) dias consecutivos, em caso de falecimento do cônjuge, ascendente, descendente, irmão ou dependente legal, mediante apresentação de certidão de óbito;</li>
-        <li><strong>Art. 473, II</strong> — até 3 (três) dias consecutivos, em virtude de casamento;</li>
-        <li><strong>Art. 473, III</strong> — por 5 (cinco) dias consecutivos, em caso de nascimento de filho(a), referente a licença paternidade, de adoção ou de guarda compartilhada (Lei nº 14.457/2022);</li>
-        <li><strong>Art. 473, IV</strong> — por um dia, em cada 12 (doze) meses de trabalho, em caso de doação voluntária de sangue devidamente comprovada;</li>
-        <li><strong>Art. 473, V</strong> — até 2 (dois) dias consecutivos ou não, para o fim de se alistar eleitor;</li>
-        <li><strong>Art. 473, VI</strong> — no período de tempo em que tiver de cumprir as exigências do Serviço Militar;</li>
-        <li><strong>Art. 473, VII</strong> — nos dias em que estiver comprovadamente realizando provas de exame vestibular para ingresso em estabelecimento de ensino superior;</li>
-        <li><strong>Art. 473, VIII</strong> — pelo tempo que se fizer necessário, quando tiver que comparecer a juízo;</li>
-        <li><strong>Art. 473, IX</strong> — pelo tempo que se fizer necessário, quando, na qualidade de representante de entidade sindical, estiver participando de reunião oficial de organismo internacional do qual o Brasil seja membro;</li>
-        <li><strong>Art. 473, X</strong> — pelo tempo necessário para acompanhar sua esposa ou companheira em até 6 (seis) consultas médicas, ou em exames complementares, durante o período de gravidez (Lei nº 14.457/2022);</li>
-        <li><strong>Art. 473, XI</strong> — por 1 (um) dia por ano para acompanhar filho de até 6 (seis) anos em consulta médica (Lei nº 13.257/2016);</li>
-        <li><strong>Art. 473, XII</strong> — até 3 (três) dias, em cada 12 (doze) meses de trabalho, em caso de realização de exames preventivos de câncer devidamente comprovada (Lei nº 13.767/2018).</li>
-      </ul>
-    </div>
-    <div class="card atencao">
-      <div class="card-tit laranja"><span class="ico">⚠️</span> Importante — Comunicação e Documentação</div>
-      <ul>
-        <li>Casamento: comunicar o gestor e RH com antecedência mínima de 30 dias;</li>
-        <li>Nascimento de filho, falecimento de familiar ou convocação oficial: comunicar o gestor tão logo tenha ciência do evento, sempre que possível;</li>
-        <li>Em todos os casos: obrigatória apresentação de documento legal comprobatório dentro dos prazos estabelecidos pela empresa;</li>
-        <li>A ausência será considerada justificada mediante a entrega da documentação exigida, desde que esta esteja formalmente regular e compatível com a hipótese legal de afastamento.</li>
-      </ul>
-    </div>
-    <div class="card legal">
       <div class="card-tit azul"><span class="ico">🌴</span> 7.2. Férias</div>
-      <p>As férias serão concedidas anualmente ao colaborador após o cumprimento do período aquisitivo de 12 (doze) meses de trabalho, conforme previsto na CLT:</p>
+      <p>As férias serão concedidas anualmente após o cumprimento do período aquisitivo de 12 meses, conforme CLT:</p>
       <ul>
-        <li>A concessão das férias deverá ocorrer dentro do período concessivo subsequente, observado o interesse da empresa e mediante programação definida junto à liderança e validada pelo Diretor;</li>
-        <li>As férias poderão ser usufruídas de forma integral ou fracionada, nos termos da legislação vigente, desde que haja concordância do colaborador e observância dos limites legais;</li>
-        <li>É vedado o início das férias no período de dois dias que antecede feriado ou dia de repouso semanal remunerado;</li>
-        <li>Durante o período de férias, o colaborador fará jus à remuneração correspondente, acrescida do adicional constitucional de 1/3 (um terço), conforme determina a legislação trabalhista;</li>
-        <li>A época da concessão das férias será a que melhor consulte os interesses do empregador.</li>
+        <li>A concessão ocorre dentro do período concessivo subsequente, conforme interesse da empresa e programação com a liderança, validada pelo Diretor;</li>
+        <li>As férias poderão ser fracionadas, desde que haja concordância do colaborador e observância dos limites legais;</li>
+        <li>É vedado o início das férias nos 2 dias que antecedem feriado ou repouso semanal remunerado;</li>
+        <li>Remuneração acrescida do adicional constitucional de 1/3;</li>
+        <li>A época de concessão será a que melhor consulte os interesses do empregador.</li>
       </ul>
-      <p style="margin-top:10px">A quantidade de dias de férias será apurada nos termos do art. 130 da CLT, conforme o número de faltas não justificadas no período aquisitivo:</p>
+      <p style="margin-top:12px">Quantidade de dias de férias conforme Art. 130 da CLT:</p>
       <table class="tabela">
         <thead><tr><th>Faltas não justificadas</th><th>Dias de férias</th></tr></thead>
         <tbody>
@@ -640,23 +666,28 @@ strong{color:var(--txt);font-weight:700}
   </div>
 </section>
 
-<!-- ========== S8 PROCESSO SELETIVO ========== -->
-<section class="secao" id="s8">
-  <div class="sec-hdr">
-    <div class="sec-masc-col"><div class="masc-wrap"><img src="../marca/Per%20apontando%20para%20frente.png" alt=""></div></div>
-    <div class="sec-badge laranja">
-      <div class="sec-num">08 — PROCESSO SELETIVO, PERÍODO DE EXPERIÊNCIA E MOVIMENTAÇÃO INTERNA</div>
-      <div class="sec-title">Como entramos<br>na equipe?</div>
-    </div>
+
+<!-- ========== S8 PROCESSO SELETIVO (1/2) ========== -->
+<section class="secao secao-wide" id="s8">
+  <span class="sec-badge-pill" style="background:var(--laranja)">08 — Processo Seletivo e Período de Experiência</span>
+  <div class="sec-title-wrap">
+    <div class="sec-title-light">Como entramos</div>
+    <div class="sec-title-bold">na equipe?</div>
   </div>
   <div class="sec-body">
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">🔍</span> 8.1. Processo Seletivo</div>
-      <ul>
-        <li>O processo seletivo é conduzido pelo RH, alinhado com o gestor da área e Diretoria;</li>
-        <li>Para a escolha dos candidatos, a empresa adota critérios técnicos, comportamentais e alinhados às necessidades do cargo;</li>
-        <li>Os processos seletivos internos e externos são conduzidos com igualdade de oportunidades, sendo vedada qualquer forma de discriminação.</li>
-      </ul>
+    <div class="grid2">
+      <div class="card verde">
+        <div class="card-tit verde"><span class="ico">🔍</span> 8.1. Processo Seletivo</div>
+        <ul>
+          <li>O processo seletivo é conduzido pelo RH, alinhado com o gestor da área e Diretoria;</li>
+          <li>Para a escolha dos candidatos, a empresa adota critérios técnicos, comportamentais e alinhados às necessidades do cargo;</li>
+          <li>Os processos seletivos internos e externos são conduzidos com igualdade de oportunidades, sendo vedada qualquer forma de discriminação.</li>
+        </ul>
+      </div>
+      <div class="card atencao">
+        <div class="card-tit laranja"><span class="ico">⚠️</span> Período de Experiência</div>
+        <p>O período de experiência será realizado conforme previsto na legislação trabalhista, podendo ser estabelecido por até 90 dias, com possibilidade de prorrogação uma única vez, desde que não ultrapasse esse limite (ex.: 45 dias + 45 dias), mediante formalização contratual.</p>
+      </div>
     </div>
     <div class="card laranja">
       <div class="card-tit laranja"><span class="ico">📋</span> 8.1.1. Etapas do Processo Seletivo</div>
@@ -679,10 +710,17 @@ strong{color:var(--txt);font-weight:700}
         <li>O colaborador deve atuar com ética, transparência e veracidade nas informações prestadas durante processos seletivos.</li>
       </ul>
     </div>
-    <div class="card atencao">
-      <div class="card-tit laranja"><span class="ico">⚠️</span> Período de Experiência</div>
-      <p>O período de experiência será realizado conforme previsto na legislação trabalhista, podendo ser estabelecido por até 90 dias, com possibilidade de prorrogação uma única vez, desde que não ultrapasse esse limite (ex.: 45 dias + 45 dias), mediante formalização contratual.</p>
-    </div>
+  </div>
+</section>
+
+<!-- ========== S8B FORMAS DE CONTRATAÇÃO ========== -->
+<section class="secao secao-wide" id="s8b">
+  <span class="sec-badge-pill" style="background:var(--laranja)">08 — Formas de Contratação</span>
+  <div class="sec-title-wrap">
+    <div class="sec-title-light">Estágio e</div>
+    <div class="sec-title-bold">Menor Aprendiz</div>
+  </div>
+  <div class="sec-body">
     <div class="grid2">
       <div class="card verde">
         <div class="card-tit verde"><span class="ico">🎓</span> 8.2.1. Estágio — Lei nº 11.788/2008</div>
@@ -716,32 +754,32 @@ strong{color:var(--txt);font-weight:700}
 </section>
 
 <!-- ========== S9 ONBOARDING ========== -->
-<section class="secao" id="s9">
-  <div class="sec-hdr">
-    <div class="sec-masc-col"><div class="masc-wrap"><img src="../marca/Tec%20pulando.png" alt=""></div></div>
-    <div class="sec-badge verde">
-      <div class="sec-num">09 — INTEGRAÇÃO DE NOVOS COLABORADORES</div>
-      <div class="sec-title">Onboarding —<br>seu primeiro dia</div>
-    </div>
+<section class="secao secao-wide" id="s9">
+  <span class="sec-badge-pill" style="background:var(--verde)">09 — Integração de Novos Colaboradores</span>
+  <div class="sec-title-wrap">
+    <div class="sec-title-light">Onboarding —</div>
+    <div class="sec-title-bold">seu primeiro dia</div>
   </div>
   <div class="sec-body">
-    <div class="card laranja">
-      <div class="card-tit laranja"><span class="ico">🎯</span> 9.1. Objetivo do Onboarding</div>
-      <ul>
-        <li>Garantir a integração estruturada do novo colaborador à empresa;</li>
-        <li>Promover alinhamento com a cultura, normas, processos e responsabilidades da função;</li>
-        <li>Reduzir o tempo de adaptação e aumentar a produtividade inicial.</li>
-      </ul>
-    </div>
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">ℹ️</span> 9.2. Diretrizes Gerais</div>
-      <ul>
-        <li>Todo novo colaborador deve passar pelo processo de integração conduzido pelo RH;</li>
-        <li>A integração deve ocorrer preferencialmente no primeiro dia de trabalho;</li>
-        <li>O colaborador deve receber orientações sobre a empresa, políticas internas e atividades da função;</li>
-        <li>O processo deve assegurar que o colaborador compreenda suas responsabilidades e rotinas;</li>
-        <li>O onboarding deve ser aplicado a todos os vínculos: CLT, estagiários e aprendizes.</li>
-      </ul>
+    <div class="grid2">
+      <div class="card laranja">
+        <div class="card-tit laranja"><span class="ico">🎯</span> 9.1. Objetivo do Onboarding</div>
+        <ul>
+          <li>Garantir a integração estruturada do novo colaborador à empresa;</li>
+          <li>Promover alinhamento com a cultura, normas, processos e responsabilidades da função;</li>
+          <li>Reduzir o tempo de adaptação e aumentar a produtividade inicial.</li>
+        </ul>
+      </div>
+      <div class="card verde">
+        <div class="card-tit verde"><span class="ico">ℹ️</span> 9.2. Diretrizes Gerais</div>
+        <ul>
+          <li>Todo novo colaborador deve passar pelo processo de integração conduzido pelo RH;</li>
+          <li>A integração deve ocorrer preferencialmente no primeiro dia de trabalho;</li>
+          <li>O colaborador deve receber orientações sobre a empresa, políticas internas e atividades da função;</li>
+          <li>O processo deve assegurar que o colaborador compreenda suas responsabilidades e rotinas;</li>
+          <li>O onboarding deve ser aplicado a todos os vínculos: CLT, estagiários e aprendizes.</li>
+        </ul>
+      </div>
     </div>
     <div class="card verde">
       <div class="card-tit verde"><span class="ico">📋</span> 9.3. Etapas do Onboarding</div>
@@ -774,21 +812,19 @@ strong{color:var(--txt);font-weight:700}
   </div>
 </section>
 
-<!-- ========== S10 BENEFÍCIOS ========== -->
-<section class="secao" id="s10">
-  <div class="sec-hdr">
-    <div class="sec-masc-col"><div class="masc-wrap"><img src="../marca/Per%20pulando.png" class="flip" alt=""></div></div>
-    <div class="sec-badge laranja">
-      <div class="sec-num">10 — BENEFÍCIOS</div>
-      <div class="sec-title">O que a Pertec<br>oferece pra você?</div>
-    </div>
+<!-- ========== S10 BENEFÍCIOS (1/2) ========== -->
+<section class="secao secao-wide" id="s10">
+  <span class="sec-badge-pill" style="background:var(--laranja)">10 — Benefícios</span>
+  <div class="sec-title-wrap">
+    <div class="sec-title-light">O que a Pertec</div>
+    <div class="sec-title-bold">oferece pra você?</div>
   </div>
   <div class="sec-body">
     <div class="card atencao">
-      <div class="card-tit laranja"><span class="ico">ℹ️</span> Informação geral</div>
+      <div class="card-tit laranja"><span class="ico">ℹ️</span> Informação Geral</div>
       <p>A empresa concede benefícios aos colaboradores conforme critérios como tempo de empresa, elegibilidade e parcerias vigentes. Os benefícios não possuem natureza salarial e a concessão, manutenção ou alteração poderá ocorrer conforme políticas internas e disponibilidade das parcerias.</p>
     </div>
-    <div class="grid2">
+    <div class="grid3">
       <div class="card verde">
         <div class="card-tit verde"><span class="ico">📈</span> Oportunidade de Crescimento</div>
         <p>Disponível a todos os colaboradores, conforme desempenho, perfil profissional e necessidades da empresa.</p>
@@ -797,90 +833,105 @@ strong{color:var(--txt);font-weight:700}
         <div class="card-tit verde"><span class="ico">🏥</span> Convênio Farmácia SESI</div>
         <p>Descontos na aquisição de medicamentos e produtos farmacêuticos. Os valores utilizados serão descontados em folha de pagamento no mês subsequente à utilização, respeitando os limites legais. Disponível após o término do período de experiência.</p>
       </div>
-    </div>
-    <div class="card laranja">
-      <div class="card-tit laranja"><span class="ico">💊</span> Convênio com Laboratórios</div>
-      <p>Disponível conforme parcerias vigentes, mediante comprovação de vínculo com a empresa:</p>
-      <h4>Laboratório Bio Saúde — Fraiburgo</h4>
-      <ul>
-        <li>Até 20% de desconto em exames realizados no próprio laboratório;</li>
-        <li>Até 10% de desconto para exames encaminhados para análise externa.</li>
-      </ul>
-      <h4>Laboratórios Fleming — Fraiburgo</h4>
-      <ul>
-        <li>Até 15% de desconto em exames laboratoriais.</li>
-      </ul>
-      <h4>Laboratórios Amigo Vida — Videira</h4>
-      <ul>
-        <li>Até 15% de desconto em exames laboratoriais.</li>
-      </ul>
+      <div class="card laranja">
+        <div class="card-tit laranja"><span class="ico">💊</span> Convênio com Laboratórios</div>
+        <p>Disponível conforme parcerias vigentes, mediante comprovação de vínculo:</p>
+        <h4>Bio Saúde — Fraiburgo</h4>
+        <ul>
+          <li>Até 20% em exames no próprio laboratório;</li>
+          <li>Até 10% em exames encaminhados para análise externa.</li>
+        </ul>
+        <h4>Fleming — Fraiburgo</h4>
+        <ul><li>Até 15% de desconto em exames laboratoriais.</li></ul>
+        <h4>Amigo Vida — Videira</h4>
+        <ul><li>Até 15% de desconto em exames laboratoriais.</li></ul>
+      </div>
     </div>
     <div class="card laranja">
       <div class="card-tit laranja"><span class="ico">💻</span> Telemedicina</div>
       <ul>
         <li>Disponível após o término do período de experiência;</li>
-        <li>A adesão ao convênio será facultativa, sendo concedida aos colaboradores que manifestarem interesse formal, mediante preenchimento e assinatura do Termo de Adesão;</li>
-        <li>Os colaboradores que optarem por não aderir ao benefício deverão assinar um Termo de Recusa, declarando ciência da disponibilização do convênio;</li>
+        <li>A adesão ao convênio será facultativa, mediante preenchimento e assinatura do Termo de Adesão;</li>
+        <li>Os colaboradores que optarem por não aderir deverão assinar um Termo de Recusa, declarando ciência da disponibilização do convênio;</li>
         <li>A mensalidade do titular (colaborador) será integralmente custeada pela empresa;</li>
-        <li>A mensalidade dos dependentes será de responsabilidade exclusiva do colaborador. Os valores correspondentes à inclusão de dependentes serão descontados mensalmente na folha de pagamento do colaborador, mediante autorização prévia, expressa e por escrito, em conformidade com o art. 462 da CLT;</li>
-        <li>O benefício poderá ser suspenso ou cancelado em caso de rescisão do contrato de trabalho, solicitação formal do colaborador ou alteração ou encerramento do contrato com a operadora do convênio;</li>
-        <li>A empresa reserva-se o direito de alterar ou encerrar o benefício a qualquer momento, mediante comunicação prévia, por meio dos canais oficiais da empresa.</li>
+        <li>A mensalidade dos dependentes será de responsabilidade exclusiva do colaborador, descontada mensalmente em folha, mediante autorização prévia e por escrito, conforme art. 462 da CLT;</li>
+        <li>O benefício poderá ser suspenso ou cancelado em caso de rescisão, solicitação formal do colaborador ou encerramento do contrato com a operadora;</li>
+        <li>A empresa reserva-se o direito de alterar ou encerrar o benefício a qualquer momento, mediante comunicação prévia pelos canais oficiais.</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<!-- ========== S10B BENEFÍCIOS (2/2) ========== -->
+<section class="secao secao-wide" id="s10b">
+  <span class="sec-badge-pill" style="background:var(--laranja)">10 — Benefícios (2/2)</span>
+  <div class="sec-body">
     <div class="card verde">
       <div class="card-tit verde"><span class="ico">🎓</span> Convênio com Instituições de Ensino</div>
-      <p>Disponível conforme parcerias vigentes com instituições de ensino, podendo se estender a dependentes (cônjuge e filhos), conforme instituição e regras específicas:</p>
-      <h4>UNIARP</h4>
-      <ul>
-        <li>Desconto de 30% em cursos presenciais e 20% em cursos digitais, condicionado ao pagamento das mensalidades até o dia 07 de cada mês;</li>
-        <li>O colaborador deverá apresentar comprovante de vínculo com a empresa semestralmente.</li>
-      </ul>
-      <h4>UNIASSELVI</h4>
-      <ul>
-        <li>Desconto adicional de 5% sobre as condições já ofertadas pela instituição;</li>
-        <li>Colaboradores já matriculados recebem acréscimo de 5% no benefício;</li>
-        <li>O convênio é estendido a cônjuges e filhos;</li>
-        <li>O vínculo com a empresa deve ser atualizado semestralmente.</li>
-      </ul>
-      <h4>Anhanguera</h4>
-      <ul>
-        <li>Desconto de 20% em cursos de graduação e 5% em pós-graduação, condicionado à pontualidade nos pagamentos;</li>
-        <li>O benefício pode ser estendido a cônjuges e filhos de até 24 anos;</li>
-        <li>O colaborador deve comprovar vínculo com a empresa no ato da rematrícula.</li>
-      </ul>
-    </div>
-    <div class="card laranja">
-      <div class="card-tit laranja"><span class="ico">🏋️</span> Convênio SEST SENAT</div>
-      <ul>
-        <li>Os atendimentos (colaborador e dependentes) são custeados integralmente pelo colaborador, sem responsabilidade financeira da empresa;</li>
-        <li>O pagamento é realizado diretamente ao SEST SENAT no momento do atendimento, podendo haver bloqueio em caso de inadimplência;</li>
-        <li>Para utilização do benefício, é necessário cadastro prévio com comprovação de vínculo empregatício (CTPS Digital e documentos pessoais);</li>
-        <li>É permitida a inclusão de dependentes, conforme regras do convênio;</li>
-        <li>O benefício contempla atendimentos em saúde (fisioterapia, odontologia e psicologia), atividades físicas e cursos de capacitação profissional.</li>
-      </ul>
+      <p>Disponível conforme parcerias vigentes, podendo se estender a dependentes (cônjuge e filhos), conforme instituição e regras específicas:</p>
+      <div class="grid3" style="margin-top:14px">
+        <div>
+          <h4>UNIARP</h4>
+          <ul>
+            <li>30% em cursos presenciais e 20% em digitais, condicionado ao pagamento até o dia 07;</li>
+            <li>Comprovante de vínculo com a empresa a cada semestre.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>UNIASSELVI</h4>
+          <ul>
+            <li>Desconto adicional de 5% sobre as condições ofertadas pela instituição;</li>
+            <li>Colaboradores já matriculados recebem acréscimo de 5%;</li>
+            <li>Convênio estendido a cônjuges e filhos;</li>
+            <li>Vínculo atualizado semestralmente.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Anhanguera</h4>
+          <ul>
+            <li>20% em graduação e 5% em pós-graduação, condicionado à pontualidade;</li>
+            <li>Extensível a cônjuges e filhos de até 24 anos;</li>
+            <li>Comprovar vínculo no ato da rematrícula.</li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="grid2">
-      <div class="card destaque">
-        <div class="card-tit verde"><span class="ico">🏆</span> Reconhecimento por Tempo de Empresa</div>
-        <p>Concedido aos colaboradores que completarem 1, 3, 5, 10, 15, 20 e 25 anos de vínculo com a empresa, como forma de valorização pela dedicação e parceria ao longo do tempo. O reconhecimento será realizado conforme critérios internos, podendo incluir premiações, homenagens ou benefícios definidos pela empresa.</p>
+      <div class="card laranja">
+        <div class="card-tit laranja"><span class="ico">🏋️</span> Convênio SEST SENAT</div>
+        <ul>
+          <li>Atendimentos (colaborador e dependentes) custeados integralmente pelo colaborador;</li>
+          <li>Pagamento realizado diretamente ao SEST SENAT no momento do atendimento, podendo haver bloqueio por inadimplência;</li>
+          <li>Necessário cadastro prévio com comprovação de vínculo (CTPS Digital e documentos pessoais);</li>
+          <li>Inclusão de dependentes permitida conforme regras do convênio;</li>
+          <li>Contempla saúde (fisioterapia, odontologia, psicologia), atividades físicas e cursos de capacitação.</li>
+        </ul>
       </div>
-      <div class="card destaque">
-        <div class="card-tit verde"><span class="ico">👶</span> Cesta Natalidade</div>
-        <p>Concedida ao colaborador em caso de nascimento ou adoção de filho(a), mediante apresentação de certidão de nascimento ou documentação comprobatória. O benefício consiste em auxílio no valor de <strong>R$ 500,00</strong>, destinado à aquisição de itens para os primeiros cuidados com o bebê. A liberação está condicionada ao envio da documentação ao RH. Concedido uma única vez por evento (nascimento ou adoção). O valor poderá ser disponibilizado por meio de cartão de benefícios ou outro formato definido pela empresa.</p>
+      <div>
+        <div class="card destaque" style="margin-bottom:18px">
+          <div class="card-tit verde"><span class="ico">🏆</span> Reconhecimento por Tempo de Empresa</div>
+          <p>Concedido aos colaboradores que completarem 1, 3, 5, 10, 15, 20 e 25 anos de vínculo. O reconhecimento será realizado conforme critérios internos, podendo incluir premiações, homenagens ou benefícios definidos pela empresa.</p>
+        </div>
+        <div class="card destaque">
+          <div class="card-tit verde"><span class="ico">👶</span> Cesta Natalidade</div>
+          <p>Concedida em caso de nascimento ou adoção de filho(a), mediante documentação comprobatória. Auxílio no valor de <strong>R$ 500,00</strong>. Concedido uma única vez por evento.</p>
+        </div>
       </div>
     </div>
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">🎂</span> Reconhecimento de Aniversário</div>
-      <p>Concedido ao colaborador no dia de seu aniversário ou em data próxima, nos casos em que coincidir com feriado, final de semana ou período de férias, como forma de valorização. O benefício consiste na entrega de um cartão personalizado com mensagem institucional, acompanhado de um valor padrão definido pela empresa.</p>
-    </div>
-    <div class="card atencao">
-      <div class="card-tit laranja"><span class="ico">📌</span> 10.2. Regras Gerais dos Benefícios</div>
-      <ul>
-        <li>Os benefícios são pessoais e intransferíveis;</li>
-        <li>O uso dos benefícios deve respeitar as condições e regras de cada programa;</li>
-        <li>O descumprimento das normas poderá resultar na suspensão ou cancelamento do benefício;</li>
-        <li>Em caso de desligamento, os benefícios serão encerrados conforme regras internas e legislação aplicável.</li>
-      </ul>
+    <div class="grid2">
+      <div class="card verde">
+        <div class="card-tit verde"><span class="ico">🎂</span> Reconhecimento de Aniversário</div>
+        <p>Concedido ao colaborador no dia de seu aniversário ou em data próxima, nos casos em que coincidir com feriado, final de semana ou período de férias. O benefício consiste na entrega de um cartão personalizado com mensagem institucional, acompanhado de um valor padrão definido pela empresa.</p>
+      </div>
+      <div class="card atencao">
+        <div class="card-tit laranja"><span class="ico">📌</span> 10.2. Regras Gerais dos Benefícios</div>
+        <ul>
+          <li>Os benefícios são pessoais e intransferíveis;</li>
+          <li>O uso dos benefícios deve respeitar as condições e regras de cada programa;</li>
+          <li>O descumprimento das normas poderá resultar na suspensão ou cancelamento do benefício;</li>
+          <li>Em caso de desligamento, os benefícios serão encerrados conforme regras internas e legislação aplicável.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -1191,7 +1242,7 @@ function atualizarNav(){
 atualizarNav();
 
 // ── Reestruturar layout Pertec: LEFT conteúdo | RIGHT mascote + linhas ────────
-const LABELS={"s1":"Objetivo","s2":"Identidade","s3":"Estrutura","s4":"Aplicação","s5":"Diretrizes","s6":"Conduta","s7":"CLT & Direitos","s8":"Recrutamento","s9":"Onboarding","s10":"Benefícios","s11":"Saúde & Bem-Estar","s12":"Comunicação","s13":"Desligamento","s14":"Canal Ético","s15":"Disciplinar","s16":"Disposições Finais","s17":"Termo"};
+const LABELS={"s1":"Objetivo","s2":"Identidade","s3":"Estrutura","s4":"Aplicação","s5":"Diretrizes","s6":"Conduta (1/3)","s6b":"Conduta (2/3)","s6c":"Conduta (3/3)","s7":"Disp. Legais","s7b":"Férias","s8":"Recrutamento","s8b":"Estágio & Aprendiz","s9":"Onboarding","s10":"Benefícios (1/2)","s10b":"Benefícios (2/2)","s11":"Saúde & Bem-Estar","s12":"Comunicação","s13":"Desligamento","s14":"Canal Ético","s15":"Disciplinar","s16":"Disposições Finais","s17":"Termo"};
 document.querySelectorAll('.secao').forEach(sec=>{
   const id=sec.id;
   const hdr=sec.querySelector('.sec-hdr');
