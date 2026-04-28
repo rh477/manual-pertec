@@ -137,6 +137,9 @@ strong{color:var(--txt);font-weight:700}
 .alerta-icon{font-size:110px;line-height:1;filter:drop-shadow(0 4px 12px rgba(204,32,32,.25))}
 .alerta-sirene{font-size:120px;line-height:1;animation:piscar 1.2s ease-in-out infinite}
 @keyframes piscar{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.92)}}
+.anim-handshake{font-size:86px;line-height:1;animation:handshake .7s ease-in-out infinite;display:block;text-align:center}
+.anim-proibido{font-size:86px;line-height:1;animation:piscar 1s ease-in-out infinite;display:block;text-align:center}
+@keyframes handshake{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
 
 /* ── MODO SLIDES ── */
 #slideWrap{height:100vh;overflow-y:scroll;scroll-snap-type:y proximity;scrollbar-width:none;-ms-overflow-style:none;position:relative}
@@ -315,6 +318,9 @@ strong{color:var(--txt);font-weight:700}
         <p>As áreas atuam de forma integrada, promovendo a colaboração entre equipes, a eficiência dos processos e o alinhamento com os objetivos estratégicos da empresa.</p>
       </div>
     </div>
+    <div style="display:flex;justify-content:flex-end;align-items:flex-end;margin-top:auto;padding-top:4px">
+      <img src="../marca/Per%20apontando%20para%20frente.png" style="height:min(30vh,210px);object-fit:contain;filter:drop-shadow(0 8px 20px rgba(0,0,0,.15));transform:scaleX(-1)" alt="Per">
+    </div>
   </div>
 </section>
 
@@ -382,6 +388,9 @@ strong{color:var(--txt);font-weight:700}
       <div class="card-tit verde"><span class="ico">💪</span> 5.7 Compromisso com a Aplicação</div>
       <p>O cumprimento deste Manual é essencial para manter um ambiente de trabalho organizado, respeitoso e alinhado com os objetivos da empresa. Todos os colaboradores devem contribuir para sua aplicação no dia a dia.</p>
     </div>
+    <div style="display:flex;justify-content:center;align-items:flex-end;margin-top:auto;padding-top:4px">
+      <img src="../marca/Tec%20deitada.png" style="height:min(32vh,220px);object-fit:contain;filter:drop-shadow(0 8px 20px rgba(0,0,0,.15))" alt="Tec">
+    </div>
   </div>
 </section>
 
@@ -416,24 +425,34 @@ strong{color:var(--txt);font-weight:700}
 <!-- ========== S6E CONDUTA — COMPROMISSO E ALIMENTAÇÃO ========== -->
 <section class="secao secao-wide" id="s6e">
   <span class="sec-badge-pill" style="background:var(--verde)">06 — Conduta no Trabalho (2/4)</span>
-  <div class="sec-body">
-    <div class="card verde">
-      <div class="card-tit verde"><span class="ico">✅</span> 6.2. Compromisso com as Atividades e Organização</div>
-      <ul>
-        <li>Executar as atividades com responsabilidade, qualidade e dentro dos prazos estabelecidos;</li>
-        <li>Priorizar tarefas essenciais ao funcionamento do negócio;</li>
-        <li>Manter o ambiente de trabalho organizado, limpo e adequado para atendimento;</li>
-        <li>Realizar reposição, organização de produtos e manutenção do espaço conforme padrão;</li>
-        <li>Zelar pela limpeza de áreas comuns (copa, banheiros e demais espaços compartilhados).</li>
-      </ul>
+  <div class="sec-body" style="display:grid;grid-template-columns:68% 32%;gap:22px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div class="card verde">
+        <div class="card-tit verde"><span class="ico">✅</span> 6.2. Compromisso com as Atividades e Organização</div>
+        <ul>
+          <li>Executar as atividades com responsabilidade, qualidade e dentro dos prazos estabelecidos;</li>
+          <li>Priorizar tarefas essenciais ao funcionamento do negócio;</li>
+          <li>Manter o ambiente de trabalho organizado, limpo e adequado para atendimento;</li>
+          <li>Realizar reposição, organização de produtos e manutenção do espaço conforme padrão;</li>
+          <li>Zelar pela limpeza de áreas comuns (copa, banheiros e demais espaços compartilhados).</li>
+        </ul>
+      </div>
+      <div class="card proibido">
+        <div class="card-tit vermelho"><span class="ico">🚫</span> Proibições — Alimentação e Bebidas</div>
+        <ul>
+          <li>Vedado o consumo de alimentos nas mesas de trabalho (apenas na copa);</li>
+          <li>Bebidas permitidas nas estações, desde que não alcoólicas e em recipiente com tampa;</li>
+          <li>Proibido circular pelas dependências consumindo alimentos ou bebidas.</li>
+        </ul>
+      </div>
     </div>
-    <div class="card proibido">
-      <div class="card-tit vermelho"><span class="ico">🚫</span> Proibições — Alimentação e Bebidas</div>
-      <ul>
-        <li>Vedado o consumo de alimentos nas mesas de trabalho (apenas na copa);</li>
-        <li>Bebidas permitidas nas estações, desde que não alcoólicas e em recipiente com tampa;</li>
-        <li>Proibido circular pelas dependências consumindo alimentos ou bebidas.</li>
-      </ul>
+    <div style="display:flex;flex-direction:column;gap:0;align-items:center;justify-content:center;height:100%">
+      <div style="flex:1;display:flex;align-items:center;justify-content:center">
+        <span class="anim-handshake">🤝</span>
+      </div>
+      <div style="flex:1;display:flex;align-items:center;justify-content:center">
+        <span class="anim-proibido">🚫</span>
+      </div>
     </div>
   </div>
 </section>
@@ -441,8 +460,11 @@ strong{color:var(--txt);font-weight:700}
 <!-- ========== S6B CONDUTA — ATENDIMENTO GERAL ========== -->
 <section class="secao secao-wide" id="s6b">
   <span class="sec-badge-pill" style="background:var(--verde)">06 — Conduta no Trabalho — Atendimento Geral</span>
-  <div class="sec-body">
-    <div class="card verde">
+  <div class="sec-body" style="display:grid;grid-template-columns:30% 70%;gap:0;align-items:center;flex:1">
+    <div style="display:flex;align-items:flex-end;justify-content:center;height:100%;padding-bottom:0">
+      <img src="../marca/Per%20apontando%20para%20frente.png" style="height:min(68vh,460px);object-fit:contain;filter:drop-shadow(0 16px 28px rgba(0,0,0,.18))" alt="Per">
+    </div>
+    <div class="card verde" style="margin-left:18px">
       <div class="card-tit verde"><span class="ico">🛎️</span> 6.3.1. Atendimento Geral (Todos os Setores)</div>
       <ul>
         <li>Garantir atendimento ágil, cordial e alinhado aos valores da empresa;</li>
@@ -658,8 +680,7 @@ strong{color:var(--txt);font-weight:700}
 <section class="secao secao-wide" id="s7">
   <span class="sec-badge-pill" style="background:#3070cc">07 — Disposições Legais</span>
   <div class="sec-title-wrap">
-    <div class="sec-title-light">Direitos garantidos</div>
-    <div class="sec-title-bold">pela lei</div>
+    <div class="sec-title-bold">Direitos garantidos pela lei</div>
   </div>
   <div class="sec-body">
     <div class="grid2">
@@ -755,6 +776,9 @@ strong{color:var(--txt);font-weight:700}
         <p>O período de experiência será realizado conforme previsto na legislação trabalhista, podendo ser estabelecido por até 90 dias, com possibilidade de prorrogação uma única vez, desde que não ultrapasse esse limite (ex.: 45 dias + 45 dias), mediante formalização contratual.</p>
       </div>
     </div>
+    <div style="display:flex;justify-content:center;align-items:flex-end;margin-top:auto;padding-top:4px">
+      <img src="../marca/Per%20pulando.png" style="height:min(30vh,210px);object-fit:contain;filter:drop-shadow(0 8px 20px rgba(0,0,0,.15))" alt="Per">
+    </div>
   </div>
 </section>
 
@@ -816,7 +840,7 @@ strong{color:var(--txt);font-weight:700}
   <span class="sec-badge-pill" style="background:var(--laranja)">08 — Formas de Contratação — Menor Aprendiz</span>
   <div class="sec-body">
     <div class="card verde">
-      <div class="card-tit verde"><span class="ico">👦</span> 8.2.2. Menor Aprendiz — Lei nº 10.097/2000</div>
+      <div class="card-tit verde"><span class="ico">📋</span> 8.2.2. Menor Aprendiz — Lei nº 10.097/2000</div>
       <ul>
         <li>Destina-se a jovens entre 14 e 24 anos, exceto para pessoas com deficiência, para as quais não há limite de idade;</li>
         <li>A contratação deve ocorrer por meio de contrato de aprendizagem formal, por prazo determinado e com registro em carteira de trabalho;</li>
@@ -1113,7 +1137,7 @@ strong{color:var(--txt);font-weight:700}
         </ul>
       </div>
     </div>
-    <div style="display:flex;align-items:center;justify-content:center;height:100%;background:#fff5f5;border-radius:20px">
+    <div style="display:flex;align-items:center;justify-content:center;height:100%">
       <div class="alerta-sirene">🚨</div>
     </div>
   </div>
@@ -1245,13 +1269,11 @@ strong{color:var(--txt);font-weight:700}
 </section>
 
 <!-- ========== S17 TERMO ========== -->
-<section class="secao" id="s17">
-  <div class="sec-hdr">
-    <div class="sec-masc-col"><div class="masc-wrap"><img src="../marca/Tec%20apontando%20para%20frente.png" alt=""></div></div>
-    <div class="sec-badge laranja">
-      <div class="sec-num">17 — TERMO DE CIÊNCIA</div>
-      <div class="sec-title">Compromisso de<br>confidencialidade</div>
-    </div>
+<section class="secao secao-wide" id="s17">
+  <span class="sec-badge-pill" style="background:var(--laranja)">17 — Termo de Ciência</span>
+  <div class="sec-title-wrap">
+    <div class="sec-title-light">Compromisso de</div>
+    <div class="sec-title-bold">confidencialidade</div>
   </div>
   <div class="sec-body">
     <div class="termo-box">
