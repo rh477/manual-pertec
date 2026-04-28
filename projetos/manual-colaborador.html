@@ -135,7 +135,8 @@ strong{color:var(--txt);font-weight:700}
 .sec-visual-proibido{display:flex;align-items:center;justify-content:center;background:#fff5f5}
 .alerta-wrap{display:flex;flex-direction:column;align-items:center;gap:24px}
 .alerta-icon{font-size:110px;line-height:1;filter:drop-shadow(0 4px 12px rgba(204,32,32,.25))}
-.alerta-sirene{font-size:120px;line-height:1;animation:piscar 1.2s ease-in-out infinite}
+.alerta-sirene{font-size:210px;line-height:1;animation:sirene-pulse .9s ease-in-out infinite;filter:drop-shadow(0 0 32px rgba(220,30,30,.55))}
+@keyframes sirene-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.1);opacity:.75}}
 @keyframes piscar{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.92)}}
 .anim-handshake{font-size:86px;line-height:1;animation:handshake .7s ease-in-out infinite;display:block;text-align:center}
 .anim-proibido{font-size:86px;line-height:1;animation:piscar 1s ease-in-out infinite;display:block;text-align:center}
@@ -855,7 +856,7 @@ strong{color:var(--txt);font-weight:700}
       </div>
     </div>
     <div style="display:flex;align-items:flex-end;justify-content:center;height:100%;padding-bottom:0">
-      <img src="../marca/Per%20pulando.png" style="height:min(88vh,640px);object-fit:contain;filter:drop-shadow(0 16px 28px rgba(0,0,0,.18))" alt="Per">
+      <img src="../marca/Tec%20pulando.png" style="height:min(88vh,640px);object-fit:contain;filter:drop-shadow(0 16px 28px rgba(0,0,0,.18))" alt="Tec">
     </div>
   </div>
 </section>
@@ -997,7 +998,7 @@ strong{color:var(--txt);font-weight:700}
   </div>
   <div style="display:grid;grid-template-columns:38% 62%;gap:0;align-items:center;flex:1;min-height:0">
     <div style="display:flex;align-items:center;justify-content:center;height:100%">
-      <img src="../marca/Per%20apontando%20para%20o%20lado.png" style="height:min(62vh,460px);object-fit:contain;filter:drop-shadow(0 16px 28px rgba(0,0,0,.18));transform:scaleX(-1)" alt="Per">
+      <img src="../marca/Tec%20apontando%20para%20o%20lado.png" style="height:min(62vh,460px);object-fit:contain;filter:drop-shadow(0 16px 28px rgba(0,0,0,.18))" alt="Tec">
     </div>
     <div style="display:flex;flex-direction:column;gap:16px;padding-left:24px">
       <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);display:flex;flex-direction:column">
