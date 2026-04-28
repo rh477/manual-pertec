@@ -30,9 +30,12 @@ body{font-family:'Arial',sans-serif;background:#fff;color:var(--txt)}
 .nav-a:hover{color:var(--laranja);border-left-color:var(--laranja);background:rgba(244,121,32,.04)}
 .nav-a.ativo{color:#111;font-weight:700;border-left-color:var(--verde);background:rgba(141,198,63,.07)}
 .nav-cor{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-.nav-sub{padding:4px 18px 4px 32px;font-size:11px;color:#aaa;border-left:3px solid transparent}
+.nav-sub{padding:4px 18px 4px 40px;font-size:11px;color:#aaa;border-left:3px solid transparent;position:relative}
+.nav-sub::before{content:'';position:absolute;left:22px;top:0;bottom:0;width:1.5px;background:#e8e8e8;border-radius:2px}
 .nav-sub:hover{color:var(--laranja);border-left-color:var(--laranja);background:rgba(244,121,32,.04)}
-.nav-sub.ativo{color:#666;font-weight:700;border-left-color:var(--verde);background:rgba(141,198,63,.05)}
+.nav-sub:hover::before{background:rgba(244,121,32,.35)}
+.nav-sub.ativo{color:#555;font-weight:700;border-left-color:var(--verde);background:rgba(141,198,63,.05)}
+.nav-sub.ativo::before{background:var(--verde)}
 
 /* ── CAPA ── */
 .capa{background:#fff;min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0}
@@ -196,30 +199,30 @@ strong{color:var(--txt);font-weight:700}
   <a href="#s3" class="nav-a"><span class="nav-cor" style="background:#8DC63F"></span>03 — Estrutura</a>
   <a href="#s4" class="nav-a"><span class="nav-cor" style="background:#d4640f"></span>04 — Aplicação</a>
   <a href="#s5" class="nav-a"><span class="nav-cor" style="background:#6aaa28"></span>05 — Diretrizes</a>
-  <a href="#s5b" class="nav-a nav-sub">↳ Diretrizes (cont.)</a>
+  <a href="#s5b" class="nav-a nav-sub">Diretrizes (cont.)</a>
   <a href="#s6" class="nav-a"><span class="nav-cor" style="background:#F47920"></span>06 — Conduta</a>
-  <a href="#s6e" class="nav-a nav-sub">↳ Compromisso (cont.)</a>
-  <a href="#s6b" class="nav-a nav-sub">↳ Atend. Geral</a>
-  <a href="#s6b2" class="nav-a nav-sub">↳ Atend. por Setor</a>
-  <a href="#s6c" class="nav-a nav-sub">↳ Recursos (1/2)</a>
-  <a href="#s6c2" class="nav-a nav-sub">↳ Recursos (2/2)</a>
-  <a href="#s6d" class="nav-a nav-sub">↳ Comunicação (1/2)</a>
-  <a href="#s6d2" class="nav-a nav-sub">↳ Comunicação (2/2)</a>
+  <a href="#s6e" class="nav-a nav-sub">Compromisso (cont.)</a>
+  <a href="#s6b" class="nav-a nav-sub">Atend. Geral</a>
+  <a href="#s6b2" class="nav-a nav-sub">Atend. por Setor</a>
+  <a href="#s6c" class="nav-a nav-sub">Recursos (1/2)</a>
+  <a href="#s6c2" class="nav-a nav-sub">Recursos (2/2)</a>
+  <a href="#s6d" class="nav-a nav-sub">Comunicação (1/2)</a>
+  <a href="#s6d2" class="nav-a nav-sub">Comunicação (2/2)</a>
   <a href="#s7" class="nav-a"><span class="nav-cor" style="background:#3070cc"></span>07 — Disp. Legais</a>
-  <a href="#s7b" class="nav-a nav-sub">↳ Férias</a>
+  <a href="#s7b" class="nav-a nav-sub">Férias</a>
   <a href="#s8" class="nav-a"><span class="nav-cor" style="background:#ff9a3c"></span>08 — Recrutamento</a>
-  <a href="#s8c" class="nav-a nav-sub">↳ Etapas do Processo</a>
-  <a href="#s8b" class="nav-a nav-sub">↳ Estágio</a>
-  <a href="#s8b2" class="nav-a nav-sub">↳ Menor Aprendiz</a>
+  <a href="#s8c" class="nav-a nav-sub">Etapas do Processo</a>
+  <a href="#s8b" class="nav-a nav-sub">Estágio</a>
+  <a href="#s8b2" class="nav-a nav-sub">Menor Aprendiz</a>
   <a href="#s9" class="nav-a"><span class="nav-cor" style="background:#8DC63F"></span>09 — Onboarding</a>
-  <a href="#s9b" class="nav-a nav-sub">↳ Onboarding (cont.)</a>
+  <a href="#s9b" class="nav-a nav-sub">Onboarding (cont.)</a>
   <a href="#s10" class="nav-a"><span class="nav-cor" style="background:#F47920"></span>10 — Benefícios</a>
-  <a href="#s10c" class="nav-a nav-sub">↳ Telemedicina</a>
-  <a href="#s10b" class="nav-a nav-sub">↳ Convênios de Ensino</a>
-  <a href="#s10d" class="nav-a nav-sub">↳ SEST & Reconhecimento</a>
+  <a href="#s10c" class="nav-a nav-sub">Telemedicina</a>
+  <a href="#s10b" class="nav-a nav-sub">Convênios de Ensino</a>
+  <a href="#s10d" class="nav-a nav-sub">SEST & Reconhecimento</a>
   <a href="#s11" class="nav-a"><span class="nav-cor" style="background:#6aaa28"></span>11 — Saúde</a>
-  <a href="#s11b" class="nav-a nav-sub">↳ Saúde (cont.)</a>
-  <a href="#s11c" class="nav-a nav-sub">↳ Conduta e Proibições</a>
+  <a href="#s11b" class="nav-a nav-sub">Saúde (cont.)</a>
+  <a href="#s11c" class="nav-a nav-sub">Conduta e Proibições</a>
   <a href="#s12" class="nav-a"><span class="nav-cor" style="background:#d4640f"></span>12 — Comunicação</a>
   <a href="#s13" class="nav-a"><span class="nav-cor" style="background:#5d9e1f"></span>13 — Desligamento</a>
   <a href="#s14" class="nav-a"><span class="nav-cor" style="background:#8DC63F"></span>14 — Canal de Ética</a>
