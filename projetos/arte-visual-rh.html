@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sugestões Visuais RH — Pertec Móveis</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+
+/* =============================================
+   BASE
+   ============================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --verde: #8DC63F;
+  --laranja: #F47920;
+  --escuro: #2D2D2D;
+  --cinza: #F5F5F5;
+  --texto: #444444;
+  --branco: #FFFFFF;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #EAEAEA;
+  color: var(--escuro);
+}
+
+/* =============================================
+   HEADER / NAV
+   ============================================= */
+.pg-nav {
+  background: var(--escuro);
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+  height: 56px;
+}
+
+.pg-nav-logo {
+  height: 28px;
+  margin-right: 28px;
+}
+
+.pg-nav-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-right: auto;
+}
+
+.pg-nav-pills {
+  display: flex;
+  gap: 4px;
+}
+
+.pg-nav-pill {
+  color: rgba(255,255,255,0.55);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  letter-spacing: 0.3px;
+}
+
+.pg-nav-pill:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.pg-nav-pill.ativo {
+  background: var(--verde);
+  color: white;
+}
+
+/* =============================================
+   HERO DE APRESENTAÇÃO
+   ============================================= */
+.pg-hero {
+  background: linear-gradient(135deg, var(--escuro) 0%, #3a3a3a 100%);
+  padding: 56px 40px 52px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pg-hero::before {
+  content: '';
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: var(--verde);
+  opacity: 0.08;
+}
+
+.pg-hero::after {
+  content: '';
+  position: absolute;
+  right: 60px;
+  bottom: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--laranja);
+  opacity: 0.1;
+}
+
+.pg-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.pg-hero-tag {
+  display: inline-block;
+  background: var(--laranja);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 3px;
+  margin-bottom: 14px;
+}
+
+.pg-hero-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.pg-hero-title span { color: var(--verde); }
+
+.pg-hero-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+/* =============================================
+   CONTAINER DE SEÇÃO
+   ============================================= */
+.pg-section {
+  padding: 56px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.pg-section + .pg-divider {
+  height: 1px;
+  background: rgba(0,0,0,0.12);
+  margin: 0 40px;
+}
+
+.sugestao-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.sugestao-num {
+  font-size: 64px;
+  font-weight: 900;
+  color: rgba(0,0,0,0.06);
+  line-height: 1;
+}
+
+.sugestao-info {}
+
+.sugestao-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--laranja);
+  border: 1.5px solid var(--laranja);
+  padding: 2px 10px;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+
+.sugestao-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--escuro);
+  margin-bottom: 4px;
+}
+
+.sugestao-desc {
+  font-size: 13px;
+  color: #888;
+}
+
+.mockup-shadow {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.variante-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+
+
+/* =============================================
+   SUGESTÃO 1 — COMUNICADO FORMAL (A4 RETRATO)
+   Fiel ao estilo das apresentações da marca:
+   formas diagonais esquerda, branco limpo, badge verde
+   ============================================= */
+
+.s1 {
+  background: white;
+  width: 100%;
+  aspect-ratio: 210 / 297;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Formas diagonais esquerda — mesmo padrão das apresentações */
+.s1-shapes {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 72px;
+  pointer-events: none;
+}
+
+.s1-shape-a {
+  position: absolute;
+  left: -22px;
+  top: 55px;
+  width: 80px;
+  height: 170px;
+  background: var(--verde);
+  transform: skewY(-18deg);
+}
+
+.s1-shape-b {
+  position: absolute;
+  left: -22px;
+  top: 210px;
+  width: 80px;
+  height: 170px;
+  background: var(--laranja);
+  transform: skewY(-18deg);
+}
+
+/* Header */
+.s1-header {
+  padding: 20px 24px 16px 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #EEEEEE;
+  flex-shrink: 0;
+}
+
+.s1-logo { height: 36px; }
+
+.s1-dept {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--verde);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Body */
+.s1-body {
+  flex: 1;
+  padding: 24px 28px 20px 84px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.s1-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--verde);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  width: fit-content;
+}
+
+.s1-title {
+  font-size: clamp(18px, 3vw, 32px);
+  font-weight: 900;
+  color: var(--escuro);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.s1-subtitle {
+  font-size: clamp(9px, 1.3vw, 13px);
+  color: var(--laranja);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.s1-line {
+  width: 40px;
+  height: 3px;
+  background: var(--laranja);
+  border-radius: 2px;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+.s1-text {
+  font-size: clamp(8px, 1.1vw, 11px);
+  line-height: 1.75;
+  color: #555;
+  flex: 1;
+}
+
+.s1-text p { margin-bottom: 10px; }
+.s1-text p:last-child { margin-bottom: 0; }
+
+.s1-assinatura {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #EEE;
+  display: flex;
+  gap: 28px;
+  flex-shrink: 0;
+}
+
+.s1-assinatura-item {}
+
+.s1-assinatura-label {
+  font-size: 8px;
+  color: #AAA;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.s1-assinatura-val {
+  font-size: clamp(8px, 1.1vw, 11px);
+  font-weight: 700;
+  color: var(--escuro);
+}
+
+/* Footer */
+.s1-footer {
+  background: var(--verde);
+  padding: 10px 24px 10px 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.s1-footer-main {
+  font-size: clamp(7px, 0.9vw, 10px);
+  font-weight: 700;
+  color: white;
+}
+
+.s1-footer-sub {
+  font-size: clamp(6px, 0.8vw, 9px);
+  color: rgba(255,255,255,0.65);
+}
+
+.s1-footer-right {
+  font-size: clamp(6px, 0.8vw, 9px);
+  color: rgba(255,255,255,0.5);
+}
+
+
+
+/* =============================================
+   SUGESTÃO 2 — CAPA DE APRESENTAÇÃO (16:9)
+   Fundo escuro, formas diagonais esquerda,
+   tipografia impactante com verde como destaque
+   ============================================= */
+
+.s2 {
+  background: var(--escuro);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+/* Formas diagonais esquerda no fundo escuro */
+.s2-shapes {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+}
+
+.s2-shape-a {
+  position: absolute;
+  left: -20px;
+  top: 20px;
+  width: 80px;
+  height: 140px;
+  background: var(--verde);
+  transform: skewY(-18deg);
+  opacity: 0.9;
+}
+
+.s2-shape-b {
+  position: absolute;
+  left: -20px;
+  top: 145px;
+  width: 80px;
+  height: 140px;
+  background: var(--laranja);
+  transform: skewY(-18deg);
+  opacity: 0.9;
+}
+
+/* Faixa inferior de cor */
+.s2-stripe {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  display: flex;
+}
+
+.s2-stripe-v { flex: 3; background: var(--verde); }
+.s2-stripe-l { flex: 1; background: var(--laranja); }
+
+/* Círculo decorativo direita */
+.s2-circle {
+  position: absolute;
+  right: -100px;
+  top: -100px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.s2-circle-inner {
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Conteúdo */
+.s2-content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(20px, 4%, 40px) clamp(24px, 5%, 56px) clamp(16px, 3%, 36px) clamp(50px, 8%, 90px);
+}
+
+.s2-logo {
+  height: clamp(24px, 4%, 38px);
+  margin-bottom: auto;
+  filter: brightness(0) invert(1);
+  width: fit-content;
+}
+
+.s2-center {}
+
+.s2-badge {
+  display: inline-block;
+  background: var(--laranja);
+  color: white;
+  font-size: clamp(7px, 1%, 10px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 3px;
+  margin-bottom: clamp(8px, 1.5%, 16px);
+}
+
+.s2-title {
+  font-size: clamp(18px, 5vw, 52px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.05;
+  margin-bottom: clamp(4px, 0.8%, 10px);
+}
+
+.s2-title span { color: var(--verde); }
+
+.s2-subtitle {
+  font-size: clamp(9px, 1.5vw, 16px);
+  color: rgba(255,255,255,0.45);
+  font-weight: 400;
+}
+
+.s2-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: clamp(8px, 1.5%, 16px);
+}
+
+.s2-bottom-left {
+  font-size: clamp(7px, 1vw, 11px);
+  color: rgba(255,255,255,0.3);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.s2-bottom-right {
+  font-size: clamp(7px, 1vw, 11px);
+  color: rgba(255,255,255,0.25);
+}
+
+
+
+/* =============================================
+   SUGESTÃO 3 — CARTA DE BOAS-VINDAS (A4 RETRATO)
+   Painel laranja com mascote + painel branco
+   Tom acolhedor para onboarding
+   ============================================= */
+
+.s3 {
+  background: white;
+  width: 100%;
+  aspect-ratio: 210 / 297;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Banda de topo */
+.s3-top-band {
+  background: var(--laranja);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.s3-logo { height: 30px; filter: brightness(0) invert(1); }
+
+.s3-top-right {
+  text-align: right;
+}
+
+.s3-top-rh {
+  font-size: 9px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.s3-top-dept {
+  font-size: 11px;
+  color: white;
+  font-weight: 900;
+}
+
+/* Corpo: dois painéis */
+.s3-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 42% 58%;
+  min-height: 0;
+}
+
+/* Painel esquerdo — laranja com mascote */
+.s3-left {
+  background: var(--laranja);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  position: relative;
+}
+
+.s3-left::before {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+
+.s3-mascote {
+  width: 90%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+/* Painel direito — branco com texto */
+.s3-right {
+  background: white;
+  padding: clamp(16px, 3%, 28px) clamp(14px, 2.5%, 24px) clamp(14px, 2.5%, 22px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 4px solid var(--laranja);
+}
+
+.s3-bv-tag {
+  display: inline-block;
+  background: var(--verde);
+  color: white;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.s3-bv-intro {
+  font-size: clamp(9px, 1.3vw, 13px);
+  font-weight: 700;
+  color: #777;
+  margin-bottom: 4px;
+}
+
+.s3-bv-nome {
+  font-size: clamp(14px, 2.2vw, 22px);
+  font-weight: 900;
+  color: var(--laranja);
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.s3-line {
+  width: 36px;
+  height: 3px;
+  background: var(--verde);
+  border-radius: 2px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.s3-bv-texto {
+  font-size: clamp(7px, 1vw, 10px);
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 14px;
+}
+
+.s3-info {}
+
+.s3-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 7px;
+}
+
+.s3-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--laranja);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.s3-info-text {
+  font-size: clamp(7px, 0.95vw, 10px);
+  color: #555;
+  line-height: 1.4;
+}
+
+.s3-info-text strong { color: var(--escuro); }
+
+/* Rodapé */
+.s3-footer {
+  background: var(--cinza);
+  border-top: 3px solid var(--verde);
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.s3-footer-l {
+  font-size: 9px;
+  color: #AAA;
+}
+
+.s3-footer-r {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--verde);
+}
+
+
+
+/* =============================================
+   SUGESTÃO 4 — BANNERS QUADRADOS (1:1)
+   Para WhatsApp, mural digital, avisos rápidos
+   ============================================= */
+
+.s4 {
+  background: white;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Variante A: Fundo Verde diagonal --- */
+.s4a-bg-top {
+  position: absolute;
+  inset: 0;
+  background: var(--verde);
+  clip-path: polygon(0 0, 100% 0, 100% 42%, 0 66%);
+}
+
+.s4a-bg-btm {
+  position: absolute;
+  inset: 0;
+  background: white;
+  clip-path: polygon(0 66%, 100% 42%, 100% 100%, 0 100%);
+}
+
+.s4a-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 38%;
+  height: 38%;
+  background: var(--laranja);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* --- Variante B: Fundo Laranja diagonal --- */
+.s4b-bg-top {
+  position: absolute;
+  inset: 0;
+  background: var(--laranja);
+  clip-path: polygon(0 0, 100% 0, 100% 42%, 0 66%);
+}
+
+.s4b-bg-btm {
+  position: absolute;
+  inset: 0;
+  background: white;
+  clip-path: polygon(0 66%, 100% 42%, 100% 100%, 0 100%);
+}
+
+.s4b-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 38%;
+  height: 38%;
+  background: var(--verde);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* Conteúdo comum aos banners */
+.s4-content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(16px, 6%, 28px);
+}
+
+.s4-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: auto;
+}
+
+.s4-logo {
+  height: clamp(20px, 5%, 32px);
+  filter: brightness(0) invert(1);
+}
+
+.s4-rh-pill {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: clamp(7px, 2%, 10px);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.35);
+}
+
+.s4-mid {
+  padding-bottom: 10px;
+}
+
+.s4-eyebrow {
+  font-size: clamp(8px, 2.2%, 11px);
+  font-weight: 700;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.s4-headline {
+  font-size: clamp(20px, 8vw, 44px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.0;
+  margin-bottom: 6px;
+}
+
+.s4-headline span { color: var(--laranja); }
+.s4b .s4-headline span { color: var(--verde); }
+
+.s4-sub {
+  font-size: clamp(9px, 2.5%, 13px);
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+}
+
+.s4-bottom-row {
+  margin-top: 14px;
+}
+
+.s4-bottom-text {
+  font-size: clamp(8px, 2%, 11px);
+  color: #777;
+  max-width: 62%;
+  line-height: 1.5;
+}
+
+
+/* =============================================
+   DIVISOR DE SEÇÃO
+   ============================================= */
+.pg-divider {
+  height: 1px;
+  background: rgba(0,0,0,0.1);
+  margin: 0 40px;
+}
+
+/* =============================================
+   RODAPÉ DA PÁGINA
+   ============================================= */
+.pg-footer {
+  background: var(--escuro);
+  padding: 28px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.pg-footer-text {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+}
+
+.pg-footer-brand {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.4);
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============== NAVEGAÇÃO ============== -->
+<nav class="pg-nav">
+  <img src="../marca/LogoPertec-FundoTransparente%20(1).png" class="pg-nav-logo" alt="Pertec">
+  <span class="pg-nav-label">Sugestões Visuais — RH</span>
+  <div class="pg-nav-pills">
+    <a href="#sug1" class="pg-nav-pill ativo">01 Comunicado</a>
+    <a href="#sug2" class="pg-nav-pill">02 Apresentação</a>
+    <a href="#sug3" class="pg-nav-pill">03 Boas-Vindas</a>
+    <a href="#sug4" class="pg-nav-pill">04 Banner</a>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<div class="pg-hero">
+  <div class="pg-hero-content">
+    <div class="pg-hero-tag">Material Interno — RH</div>
+    <h1 class="pg-hero-title">Identidade Visual do<br><span>RH Pertec Móveis</span></h1>
+    <p class="pg-hero-sub">Quatro sugestões de layout para comunicados, apresentações, boas-vindas e banners digitais. Todos seguem a identidade visual da marca.</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     SUGESTÃO 1 — COMUNICADO FORMAL
+     ============================================================ -->
+<section class="pg-section" id="sug1">
+  <div class="sugestao-header">
+    <div class="sugestao-num">01</div>
+    <div class="sugestao-info">
+      <div class="sugestao-tag">Formato A4 · Retrato</div>
+      <div class="sugestao-title">Comunicado Interno</div>
+      <div class="sugestao-desc">Para políticas, normas, circulares e avisos formais. Usa as formas diagonais que já existem nos materiais da marca.</div>
+    </div>
+  </div>
+
+  <div class="mockup-shadow">
+    <div class="s1">
+      <!-- Formas diagonais esquerda -->
+      <div class="s1-shapes">
+        <div class="s1-shape-a"></div>
+        <div class="s1-shape-b"></div>
+      </div>
+
+      <!-- Header -->
+      <div class="s1-header">
+        <img src="../marca/LogoPertec-FundoTransparente%20(1).png" class="s1-logo" alt="Pertec Móveis">
+        <span class="s1-dept">Recursos Humanos</span>
+      </div>
+
+      <!-- Body -->
+      <div class="s1-body">
+        <span class="s1-badge">Comunicado Interno</span>
+        <div class="s1-title">Política de Ponto<br>e Assiduidade</div>
+        <div class="s1-subtitle">Atualização — Vigência a partir de maio/2026</div>
+        <div class="s1-line"></div>
+        <div class="s1-text">
+          <p>Prezados colaboradores,</p>
+          <p>Informamos que a partir de 01 de maio de 2026 entram em vigor as novas diretrizes referentes ao controle de ponto eletrônico e assiduidade em ambas as unidades da Pertec Móveis — Fraiburgo e Videira.</p>
+          <p>As principais mudanças incluem: registro de ponto via aplicativo, limite de 15 minutos de tolerância por turno e comunicação prévia obrigatória para atrasos ou saídas antecipadas ao seu gestor imediato.</p>
+          <p>Para dúvidas ou esclarecimentos, entre em contato com o RH pelo e-mail rh@pertecmoveis.com.br ou pessoalmente na matriz em Fraiburgo.</p>
+          <p>Agradecemos a compreensão e colaboração de todos.</p>
+        </div>
+
+        <div class="s1-assinatura">
+          <div class="s1-assinatura-item">
+            <div class="s1-assinatura-label">Responsável</div>
+            <div class="s1-assinatura-val">Aline — Analista de RH</div>
+          </div>
+          <div class="s1-assinatura-item">
+            <div class="s1-assinatura-label">Data</div>
+            <div class="s1-assinatura-val">Maio / 2026</div>
+          </div>
+          <div class="s1-assinatura-item">
+            <div class="s1-assinatura-label">Vigência</div>
+            <div class="s1-assinatura-val">A partir de 01/05/2026</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé -->
+      <div class="s1-footer">
+        <div>
+          <div class="s1-footer-main">Pertec Móveis — Recursos Humanos</div>
+          <div class="s1-footer-sub">rh@pertecmoveis.com.br &nbsp;·&nbsp; Fraiburgo – SC</div>
+        </div>
+        <div class="s1-footer-right">uso interno · confidencial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pg-divider"></div>
+
+<!-- ============================================================
+     SUGESTÃO 2 — CAPA DE APRESENTAÇÃO
+     ============================================================ -->
+<section class="pg-section" id="sug2">
+  <div class="sugestao-header">
+    <div class="sugestao-num">02</div>
+    <div class="sugestao-info">
+      <div class="sugestao-tag">Formato 16:9 · Digital</div>
+      <div class="sugestao-title">Capa de Apresentação</div>
+      <div class="sugestao-desc">Para reuniões, relatórios de indicadores, treinamentos e slides corporativos. Fundo escuro com formas diagonais da marca.</div>
+    </div>
+  </div>
+
+  <div class="mockup-shadow">
+    <div class="s2">
+      <!-- Formas diagonais esquerda (fundo escuro) -->
+      <div class="s2-shapes">
+        <div class="s2-shape-a"></div>
+        <div class="s2-shape-b"></div>
+      </div>
+
+      <!-- Círculos decorativos direita -->
+      <div class="s2-circle"></div>
+      <div class="s2-circle-inner"></div>
+
+      <!-- Faixa inferior verde + laranja -->
+      <div class="s2-stripe">
+        <div class="s2-stripe-v"></div>
+        <div class="s2-stripe-l"></div>
+      </div>
+
+      <!-- Conteúdo -->
+      <div class="s2-content">
+        <img src="../marca/LogoPertec-FundoTransparente%20(1).png" class="s2-logo" alt="Pertec Móveis">
+
+        <div class="s2-center">
+          <div class="s2-badge">RH · Indicadores 2026</div>
+          <div class="s2-title">Relatório de<br><span>Rotatividade</span></div>
+          <div class="s2-subtitle">1º Trimestre — Janeiro a Março 2026</div>
+        </div>
+
+        <div class="s2-bottom">
+          <div class="s2-bottom-left">Fraiburgo – SC &nbsp;·&nbsp; Abril 2026</div>
+          <div class="s2-bottom-right">Aline — Analista de RH</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nota de uso -->
+  <div style="margin-top:16px;padding:14px 20px;background:white;border-left:3px solid var(--verde);border-radius:0 6px 6px 0;font-size:12px;color:#666;line-height:1.6">
+    <strong style="color:var(--escuro)">Como usar:</strong> Troque "Indicadores 2026", "Rotatividade" e "1º Trimestre" pelo tema do seu material. A mesma capa serve para treinamentos, pesquisa de clima, avaliação de desempenho, integração e outros.
+  </div>
+</section>
+
+<div class="pg-divider"></div>
+
+<!-- ============================================================
+     SUGESTÃO 3 — BOAS-VINDAS COM MASCOTE
+     ============================================================ -->
+<section class="pg-section" id="sug3">
+  <div class="sugestao-header">
+    <div class="sugestao-num">03</div>
+    <div class="sugestao-info">
+      <div class="sugestao-tag">Formato A4 · Retrato</div>
+      <div class="sugestao-title">Carta de Boas-Vindas</div>
+      <div class="sugestao-desc">Para onboarding e recepção de novos colaboradores. Tom mais acolhedor, com a mascote Per. Painel dividido laranja + branco.</div>
+    </div>
+  </div>
+
+  <div class="mockup-shadow">
+    <div class="s3">
+      <!-- Banda de topo -->
+      <div class="s3-top-band">
+        <img src="../marca/LogoPertec-FundoTransparente%20(1).png" class="s3-logo" alt="Pertec Móveis">
+        <div class="s3-top-right">
+          <div class="s3-top-rh">Recursos Humanos</div>
+          <div class="s3-top-dept">Kit de Integração</div>
+        </div>
+      </div>
+
+      <!-- Corpo dividido -->
+      <div class="s3-body">
+        <!-- Esquerda: mascote -->
+        <div class="s3-left">
+          <img src="../marca/Per%20pulando.png" class="s3-mascote" alt="Per">
+        </div>
+
+        <!-- Direita: conteúdo -->
+        <div class="s3-right">
+          <span class="s3-bv-tag">Bem-vindo(a)!</span>
+          <div class="s3-bv-intro">A Pertec Móveis está feliz<br>em receber</div>
+          <div class="s3-bv-nome">[Nome do<br>Colaborador]</div>
+          <div class="s3-line"></div>
+          <div class="s3-bv-texto">Que bom ter você aqui! Este kit tem tudo que você precisa saber para começar bem na Pertec Móveis.</div>
+
+          <div class="s3-info">
+            <div class="s3-info-item">
+              <div class="s3-dot"></div>
+              <div class="s3-info-text"><strong>Cargo:</strong> [Cargo]</div>
+            </div>
+            <div class="s3-info-item">
+              <div class="s3-dot"></div>
+              <div class="s3-info-text"><strong>Data de início:</strong> [Data]</div>
+            </div>
+            <div class="s3-info-item">
+              <div class="s3-dot"></div>
+              <div class="s3-info-text"><strong>Unidade:</strong> Fraiburgo / Videira</div>
+            </div>
+            <div class="s3-info-item">
+              <div class="s3-dot"></div>
+              <div class="s3-info-text"><strong>Responsável RH:</strong> Aline</div>
+            </div>
+            <div class="s3-info-item">
+              <div class="s3-dot"></div>
+              <div class="s3-info-text"><strong>Contato RH:</strong> rh@pertecmoveis.com.br</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé -->
+      <div class="s3-footer">
+        <div class="s3-footer-l">rh@pertecmoveis.com.br &nbsp;·&nbsp; Fraiburgo – SC</div>
+        <div class="s3-footer-r">RH Pertec Móveis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pg-divider"></div>
+
+<!-- ============================================================
+     SUGESTÃO 4 — BANNERS QUADRADOS
+     ============================================================ -->
+<section class="pg-section" id="sug4">
+  <div class="sugestao-header">
+    <div class="sugestao-num">04</div>
+    <div class="sugestao-info">
+      <div class="sugestao-tag">Formato 1:1 · WhatsApp / Mural Digital</div>
+      <div class="sugestao-title">Banner de Comunicação Rápida</div>
+      <div class="sugestao-desc">Para avisos no WhatsApp, mural interno ou TV corporativa. Duas variantes de cor — escolha a que melhor combinar com o tipo de mensagem.</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+
+    <!-- Variante A: Fundo Verde -->
+    <div>
+      <div class="variante-label">Variante A — Aviso / Reunião (fundo verde)</div>
+      <div class="mockup-shadow">
+        <div class="s4">
+          <div class="s4a-bg-top"></div>
+          <div class="s4a-bg-btm"></div>
+          <div class="s4a-corner"></div>
+          <div class="s4-content">
+            <div class="s4-top-row">
+              <img src="../marca/LogoPertec-FundoTransparente%20(1).png" class="s4-logo" alt="Pertec">
+              <span class="s4-rh-pill">RH INFORMA</span>
+            </div>
+            <div class="s4-mid">
+              <div class="s4-eyebrow">Atenção colaboradores</div>
+              <div class="s4-headline">Reunião<br><span>Geral</span></div>
+              <div class="s4-sub">Sexta-feira, 09 de maio — 14h</div>
+            </div>
+            <div class="s4-bottom-row">
+              <div class="s4-bottom-text">Presença obrigatória para todos os colaboradores das unidades Fraiburgo e Videira.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Variante B: Fundo Laranja -->
+    <div>
+      <div class="variante-label">Variante B — Parabéns / Datas especiais (fundo laranja)</div>
+      <div class="mockup-shadow">
+        <div class="s4 s4b">
+          <div class="s4b-bg-top"></div>
+          <div class="s4b-bg-btm"></div>
+          <div class="s4b-corner"></div>
+          <div class="s4-content">
+            <div class="s4-top-row">
+              <img src="../marca/LogoPertec-FundoTransparente%20(1).png" class="s4-logo" alt="Pertec">
+              <span class="s4-rh-pill">RH PARABENIZA</span>
+            </div>
+            <div class="s4-mid">
+              <div class="s4-eyebrow">Aniversariante do mês</div>
+              <div class="s4-headline">Parabéns,<br><span>[Nome]!</span></div>
+              <div class="s4-sub">Maio 2026 · A Pertec celebra com você</div>
+            </div>
+            <div class="s4-bottom-row">
+              <div class="s4-bottom-text">Feliz aniversário, com muito carinho do time Pertec Móveis.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============== RODAPÉ ============== -->
+<footer class="pg-footer">
+  <div class="pg-footer-text">Pertec Móveis · RH · Material de uso interno</div>
+  <div class="pg-footer-brand">Fraiburgo – SC · 2026</div>
+</footer>
+
+</body>
+</html>
