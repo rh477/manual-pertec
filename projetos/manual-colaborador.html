@@ -1033,14 +1033,10 @@ strong{color:var(--txt);font-weight:700}
   <span class="sec-badge-pill" style="background:var(--laranja)">Benefícios</span>
   <div class="sec-body">
     <div class="grid2">
-      <div class="card verde" style="position:relative;overflow:hidden">
-        <div style="position:absolute;top:-18px;right:-18px;width:90px;height:90px;background:rgba(141,198,63,.13);border-radius:50%"></div>
+      <div class="card verde">
         <div class="card-tit verde"><span class="ico">🏃</span> Academia – Programa Corpo em Movimento</div>
-        <p style="margin-bottom:12px">Através de academias e instituições parceiras, serão concedidos <strong>descontos especiais</strong> e promovidas campanhas de incentivo, incluindo desafios voltados à prática de atividades físicas, saúde e bem-estar.</p>
-        <div style="background:rgba(141,198,63,.14);border-left:3px solid var(--verde);border-radius:0 8px 8px 0;padding:11px 14px;margin-top:4px">
-          <p style="font-size:12px;font-weight:700;color:var(--vd);margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px">Objetivo do programa</p>
-          <p style="font-size:13px;color:#444">Estimular hábitos saudáveis e incentivar a prática regular de atividades físicas, contribuindo para a melhoria da saúde física e mental, redução do estresse e mais qualidade de vida.</p>
-        </div>
+        <p>Através de academias e instituições parceiras, serão concedidos <strong>descontos especiais</strong> e promovidas campanhas de incentivo, incluindo desafios voltados à prática de atividades físicas, saúde e bem-estar.</p>
+        <p style="margin-top:10px"><strong>Objetivo:</strong> Estimular hábitos saudáveis e incentivar a prática regular de atividades físicas, contribuindo para a melhoria da saúde física e mental, redução do estresse e mais qualidade de vida.</p>
       </div>
       <div class="card laranja">
         <div class="card-tit laranja"><span class="ico">🏋️</span> Convênio SEST SENAT</div>
@@ -1061,27 +1057,13 @@ strong{color:var(--txt);font-weight:700}
   <span class="sec-badge-pill" style="background:var(--laranja)">Benefícios</span>
   <div class="sec-body">
     <div class="grid2" style="margin-bottom:18px">
-      <div class="card laranja" style="display:flex;flex-direction:column;gap:8px">
+      <div class="card laranja">
         <div class="card-tit laranja"><span class="ico">👶</span> Cesta Natalidade</div>
-        <p>Concedida em caso de nascimento ou adoção de filho(a), mediante documentação comprobatória.</p>
-        <div style="background:rgba(244,121,32,.12);border-radius:8px;padding:10px 14px;text-align:center;margin-top:auto">
-          <span style="font-size:22px;font-weight:900;color:var(--laranja)">R$ 500,00</span>
-          <p style="font-size:11px;color:#888;margin-top:2px">concedido uma única vez por evento</p>
-        </div>
+        <p>Concedida em caso de nascimento ou adoção de filho(a), mediante documentação comprobatória. Auxílio no valor de <strong>R$ 500,00</strong>. Concedido uma única vez por evento.</p>
       </div>
-      <div class="card destaque" style="display:flex;flex-direction:column;gap:8px">
+      <div class="card destaque">
         <div class="card-tit verde"><span class="ico">🏆</span> Reconhecimento por Tempo de Empresa</div>
-        <p>Concedido aos colaboradores que completarem:</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
-          <span style="background:var(--verde);color:#fff;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:700">1 ano</span>
-          <span style="background:var(--verde);color:#fff;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:700">3 anos</span>
-          <span style="background:var(--verde);color:#fff;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:700">5 anos</span>
-          <span style="background:var(--verde);color:#fff;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:700">10 anos</span>
-          <span style="background:var(--verde);color:#fff;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:700">15 anos</span>
-          <span style="background:var(--verde);color:#fff;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:700">20 anos</span>
-          <span style="background:var(--verde);color:#fff;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:700">25 anos</span>
-        </div>
-        <p style="font-size:13px;color:#666;margin-top:4px">Pode incluir premiações, homenagens ou benefícios definidos pela empresa.</p>
+        <p>Concedido aos colaboradores que completarem 1, 3, 5, 10, 15, 20 e 25 anos de vínculo. O reconhecimento será realizado conforme critérios internos, podendo incluir premiações, homenagens ou benefícios definidos pela empresa.</p>
       </div>
     </div>
     <div class="card verde">
@@ -1378,7 +1360,11 @@ strong{color:var(--txt);font-weight:700}
 <!-- Controle de slides -->
 <div class="slide-nav">
   <button class="slide-btn" id="slidePrev" title="Slide anterior">&#8592;</button>
-  <span id="slideNum">1 / 18</span>
+  <span id="slideNum" style="display:flex;align-items:center;gap:3px">
+    <span id="slideNumTxt" title="Clique para ir a um slide" style="cursor:pointer;border-bottom:1px dashed #ccc;padding:0 2px;border-radius:2px">1</span>
+    <span id="slideNumSep">/ 18</span>
+    <input id="slideNumInput" type="number" min="1" style="display:none;width:40px;border:1.5px solid var(--laranja);border-radius:5px;text-align:center;font:inherit;font-size:13px;font-weight:700;padding:1px 3px;outline:none;-moz-appearance:textfield;appearance:textfield">
+  </span>
   <button class="slide-btn" id="slideNext" title="Próximo slide">&#8594;</button>
 </div>
 
@@ -1386,16 +1372,23 @@ strong{color:var(--txt);font-weight:700}
 // ── Slide navigation ──────────────────────────────────────────────────────────
 const slideWrap=document.getElementById('slideWrap');
 const slides=Array.from(slideWrap.querySelectorAll('.capa,.secao,.secao-split'));
-const slideNumEl=document.getElementById('slideNum');
+const slideNumTxt=document.getElementById('slideNumTxt');
+const slideNumSep=document.getElementById('slideNumSep');
+const slideNumInput=document.getElementById('slideNumInput');
 const slidePrevBtn=document.getElementById('slidePrev');
 const slideNextBtn=document.getElementById('slideNext');
 let slideAtual=0;
+
+function setSlideNum(n){
+  slideNumTxt.textContent=n+1;
+  slideNumSep.textContent='/ '+slides.length;
+}
 
 function irParaSlide(n){
   if(n<0||n>=slides.length)return;
   slideAtual=n;
   slideWrap.scrollTo({top:slides[n].offsetTop,behavior:'smooth'});
-  slideNumEl.textContent=(n+1)+' / '+slides.length;
+  setSlideNum(n);
   slidePrevBtn.disabled=(n===0);
   slideNextBtn.disabled=(n===slides.length-1);
   atualizarNav();
@@ -1405,18 +1398,43 @@ slideWrap.addEventListener('scroll',()=>{
   const pos=slideWrap.scrollTop;
   let newIdx=0;
   for(let i=slides.length-1;i>=0;i--){if(slides[i].offsetTop<=pos+10){newIdx=i;break;}}
-  if(newIdx!==slideAtual){slideAtual=newIdx;slideNumEl.textContent=(newIdx+1)+' / '+slides.length;slidePrevBtn.disabled=(newIdx===0);slideNextBtn.disabled=(newIdx===slides.length-1);atualizarNav();}
+  if(newIdx!==slideAtual){slideAtual=newIdx;setSlideNum(newIdx);slidePrevBtn.disabled=(newIdx===0);slideNextBtn.disabled=(newIdx===slides.length-1);atualizarNav();}
 },{passive:true});
 
 document.addEventListener('keydown',e=>{
   if(navPainel.classList.contains('aberto'))return;
+  if(document.activeElement===slideNumInput)return;
   if(e.key==='PageDown'||e.key==='ArrowRight'||(e.key===' '&&!e.target.matches('input,textarea'))){e.preventDefault();irParaSlide(slideAtual+1);}
   if(e.key==='PageUp'||e.key==='ArrowLeft'){e.preventDefault();irParaSlide(slideAtual-1);}
 });
 slidePrevBtn.addEventListener('click',()=>irParaSlide(slideAtual-1));
 slideNextBtn.addEventListener('click',()=>irParaSlide(slideAtual+1));
 slidePrevBtn.disabled=true;
-slideNumEl.textContent='1 / '+slides.length;
+setSlideNum(0);
+
+slideNumTxt.addEventListener('click',()=>{
+  slideNumTxt.style.display='none';
+  slideNumSep.style.display='none';
+  slideNumInput.value=slideAtual+1;
+  slideNumInput.max=slides.length;
+  slideNumInput.style.display='';
+  slideNumInput.focus();
+  slideNumInput.select();
+});
+
+function fecharInputNum(){
+  const v=parseInt(slideNumInput.value,10);
+  slideNumInput.style.display='none';
+  slideNumTxt.style.display='';
+  slideNumSep.style.display='';
+  if(v>=1&&v<=slides.length)irParaSlide(v-1);
+}
+
+slideNumInput.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){e.preventDefault();fecharInputNum();}
+  if(e.key==='Escape'){slideNumInput.style.display='none';slideNumTxt.style.display='';slideNumSep.style.display='';}
+});
+slideNumInput.addEventListener('blur',fecharInputNum);
 
 // ── Nav scroll spy ────────────────────────────────────────────────────────────
 const navAs=document.querySelectorAll('.nav-a[href^="#"]');
